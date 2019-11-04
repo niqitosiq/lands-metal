@@ -20,3 +20,36 @@
     font-style: normal;
     font-weight: 700;
 }
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("Montserrat-Bold.eot");
+    src: url("Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-Bold.woff2") format("woff2"),
+         url("Montserrat-Bold.woff") format("woff"),
+         url("Montserrat-Bold.ttf") format("ttf"),
+         url("Montserrat-Bold.svg#Montserrat-Bold") format("svg");
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("Montserrat-Bold.eot");
+    src: url("Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-Bold.woff2") format("woff2"),
+         url("Montserrat-Bold.woff") format("woff"),
+         url("Montserrat-Bold.ttf") format("ttf"),
+         url("Montserrat-Bold.svg#Montserrat-Bold") format("svg");
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("Montserrat-Bold.eot");
+    src: url("Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-Bold.woff2") format("woff2"),
+         url("Montserrat-Bold.woff") format("woff"),
+         url("Montserrat-Bold.ttf") format("ttf"),
+         url("Montserrat-Bold.svg#Montserrat-Bold") format("svg");
+    font-style: normal;
+    font-weight: 700;
+}

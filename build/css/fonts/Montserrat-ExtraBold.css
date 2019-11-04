@@ -20,3 +20,36 @@
     font-style: normal;
     font-weight: heavy;
 }
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url("Montserrat-ExtraBold.eot");
+    src: url("Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-ExtraBold.woff2") format("woff2"),
+         url("Montserrat-ExtraBold.woff") format("woff"),
+         url("Montserrat-ExtraBold.ttf") format("ttf"),
+         url("Montserrat-ExtraBold.svg#Montserrat-ExtraBold") format("svg");
+    font-style: normal;
+    font-weight: heavy;
+}
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url("Montserrat-ExtraBold.eot");
+    src: url("Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-ExtraBold.woff2") format("woff2"),
+         url("Montserrat-ExtraBold.woff") format("woff"),
+         url("Montserrat-ExtraBold.ttf") format("ttf"),
+         url("Montserrat-ExtraBold.svg#Montserrat-ExtraBold") format("svg");
+    font-style: normal;
+    font-weight: heavy;
+}
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url("Montserrat-ExtraBold.eot");
+    src: url("Montserrat-ExtraBold.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-ExtraBold.woff2") format("woff2"),
+         url("Montserrat-ExtraBold.woff") format("woff"),
+         url("Montserrat-ExtraBold.ttf") format("ttf"),
+         url("Montserrat-ExtraBold.svg#Montserrat-ExtraBold") format("svg");
+    font-style: normal;
+    font-weight: heavy;
+}

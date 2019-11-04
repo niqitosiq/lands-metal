@@ -14,6 +14,7 @@ $(document).ready(function(){
 		TweenLite.to('.navigation', 1, {
 			opacity: 0,
 			x: -10,
+			y: -150,
 			scale: 1.07,
 			ease: Power2.easeOut,
 		})
@@ -29,7 +30,24 @@ $(document).ready(function(){
 		})
 		.setTween(tween)
 		.setClassToggle(".header", "scrolled")
-		.addIndicators()
 		.addTo(controller);
+
+
+	const background = new TimelineLite();
+	background.add(
+		TweenLite.to('.main__background', 1, {
+			opacity: 0.9,
+			ease: Power2.easeOut,
+		})
+	)
+	const main_scene = new ScrollMagic.Scene({
+		triggerElement: "#main",
+		duration: main_height,
+		triggerHook: 0,
+	})
+	.setTween(background)
+	.addIndicators()
+	.addTo(controller)
+
 })
 

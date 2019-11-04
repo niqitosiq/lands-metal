@@ -18,12 +18,18 @@
 +font(Montserrat-SemiBold, Montserrat-SemiBold)
 =fsb
   font-family: 'Montserrat-SemiBold', serif
+
++font(Montserrat-Black, Montserrat-Black)
+=fblack
+  font-family: 'Montserrat-Black', serif
+
+
 $accent: #2F41FF
 
 body
 	background: #fff
 	+fr
-	padding-bottom: 100px
+	padding-bottom: 400px
 h1,h2,h3,h4,p
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -36,6 +42,11 @@ a, a:visited, a:hover, a:focus
 
 h1,h2,h3,h4
 	+feb
+h2
+	font-size: 40px
+	text-transform: uppercase
+	letter-spacing: 1px
+	color: #fff
 .button
 	span
 		+fsb
@@ -50,6 +61,7 @@ h1,h2,h3,h4
 	border: solid 1px #4958FF
 	cursor: pointer
 	background-color: $accent
+	box-shadow: 0px 16px 19px rgba(35, 41, 85, 0.256283)
 	+pseudo
 	&:after
 		width: 100%
@@ -104,26 +116,48 @@ h1,h2,h3,h4
 			opacity: 1
 
 .main
-	padding-top: 281px
-	padding-bottom: 800px
-	padding-left: 375px
-	+flexbox(flex-start, flex-start, column)
+	+flexbox(center, flex-start, column)
+	&__container
+		+flexbox(flex-start, flex-start, column)
+		align-self: flex-start
+		padding-top: 281px
+		padding-left: 375px
+		+below(1910px)
+			padding-left: 300px
+		+below(1450px)
+			padding-top: 190px
 	&__header
 		font-size: 50px
 		letter-spacing: -.8px
+		+below(1910px)
+			font-size: 40px
 		line-height: 1.26
 		color: #fff
+		text-transform: uppercase
 		&_accent
 			color: $accent
 	&__button
-		margin-top: 60px
-	background-image: url("../img/hero-bg.jpg")
+		margin-top: 54px
+		padding-left: 70px
+		padding-right: 65px
+	position: relative
+	&__background
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		z-index: -1
+		background-image: url("../img/hero-bg.jpg")
+		background-size: cover
 .navigation
 	color: #fff
 	position: fixed
 	top: 292px
 	left: 54px
 
+	+below(1450px)
+		top: 200px
 	&__elem
 		display: block
 		margin-bottom: 34px
@@ -132,3 +166,33 @@ h1,h2,h3,h4
 			color: #82B1E2
 	&__name
 		margin-left: 6px
+
+.projects
+	padding-left: 230px
+	padding-right: 230px
+	margin-bottom: -120px
+	margin-top: 245px
+	width: 100%
+	&__header
+		margin-top: 100px
+		margin-bottom: 90px
+	&__wrapper
+		padding-left: 148px
+		padding-right: 148px
+		padding-bottom: 128px
+		+flexbox(center, center)
+		flex-wrap: wrap
+	&__background
+		backdrop-filter: blur(50px)
+		+flexbox(center, center, column)
+	&__item
+		width: calc(100%/3 - 12px)
+		height: 380px
+		margin-bottom: 10px
+		margin-right: 12px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+		&.no_margin
+			margin-right: 0

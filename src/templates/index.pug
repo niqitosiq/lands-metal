@@ -7,17 +7,30 @@ secNames: ['Главная', "Наши проекты", 'Постоянные к
 extends layouts/_layout
 block content
 	+b.SECTION.main#main
-		+e.H1.header 
-			+e.SPAN.header_accent Металлические изделия  
-			br
-			| для массовых застройщиков 
-			br
-			|  по центральной России
-		+e.__button.button 
-			span Оставить заявку
+		+e.container
+			+e.H1.header 
+				+e.SPAN.header_accent Металлические изделия  
+				br
+				| для массовых застройщиков 
+				br
+				|  по центральной России
+			+e.__button.button 
+				span Оставить заявку
+		+e.__background
 		+b.navigation
 			each val, index in secNames
 				+e.A(href="#").elem(class=index === 0 ? "active" : "")
 					+e.SPAN.num= "0" + (index+1) 
 					+e.SPAN.name= val
+		+b.projects
+
+			+e.background
+				+e.H2.header
+					| Наши проекты
+				+e.wrapper
+					each val in [1,2,3,4,5,6]
+						+e.item(class=val%3 === 0 ? "no_margin" : "")
+							img.image(src="img/projects/" + val + ".jpg")
+				+e.cifre
+					span 6
 	.class
