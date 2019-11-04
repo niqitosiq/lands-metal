@@ -5,4 +5,36 @@
 
 
 body
-  background: #fff
+	background: #fff
+.class
+	height: 10000px
+	width: 300px
+.header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	+flexbox(flex-start, space-between)
+	padding-right: 92px
+	padding-left: 92px
+	padding-top: 41px
+	color: #fff
+	&__left
+		+flexbox()
+	&__logo svg
+		width: 123px
+.main
+	padding-top: 284px
+	padding-bottom: 800px
+	padding-left: 375px
+	&__header
+		font-size: 80px
+		color: #fff
+	background-image: url("../img/hero-bg.jpg")
+.navigation
+	color: #fff
+	position: fixed
+	top: 50%
+	left: 54px
+	&__name
+		margin-left: 10px

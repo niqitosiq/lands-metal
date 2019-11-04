@@ -1,11 +1,19 @@
 ---
-title: Index Page
-headerHide: true
-footerHide: true
+title: Металл
+headerHide: false
+footerHide: false
+secNames: ['a', "Наши проекты", 'a','a','a','a']
 ---
 extends layouts/_layout
 block content
-	h2 Заголовок
-	+i("arr")
-	+i("play")
-	+i("quot")
+	+b.SECTION.main#main
+		+e.H1.header 
+			+e.SPAN.header_accent Металлические изделия  
+			| для массовых застройщиков  по центральной России
+		+e.__button.button Оставить заявку
+		+b.navigation
+			each val, index in secNames
+				+e.elem
+					+e.SPAN.num= "0" + (index+1) 
+					+e.SPAN.name= val
+	.class

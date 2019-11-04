@@ -24,7 +24,7 @@ gulp.task('js', function (done) {
                     exclude: /(node_modules)/,
                     loader: 'babel-loader',
                     query: {
-                      presets: ['env']
+                      presets: ['@babel/preset-env']
                     }
                   }
                 ]
