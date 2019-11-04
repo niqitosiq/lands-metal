@@ -2,18 +2,22 @@
 title: Металл
 headerHide: false
 footerHide: false
-secNames: ['a', "Наши проекты", 'a','a','a','a']
+secNames: ['Главная', "Наши проекты", 'Постоянные клиенты','Наши партнеры','О компании','Кому не повезло', 'Команда', 'Контакты']
 ---
 extends layouts/_layout
 block content
 	+b.SECTION.main#main
 		+e.H1.header 
 			+e.SPAN.header_accent Металлические изделия  
-			| для массовых застройщиков  по центральной России
-		+e.__button.button Оставить заявку
+			br
+			| для массовых застройщиков 
+			br
+			|  по центральной России
+		+e.__button.button 
+			span Оставить заявку
 		+b.navigation
 			each val, index in secNames
-				+e.elem
+				+e.A(href="#").elem(class=index === 0 ? "active" : "")
 					+e.SPAN.num= "0" + (index+1) 
 					+e.SPAN.name= val
 	.class

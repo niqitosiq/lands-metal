@@ -28,7 +28,8 @@ $(document).ready(function(){
 
 		})
 		.setTween(tween)
-		.addIndicators() // add indicators (requires plugin)
+		.setClassToggle(".header", "scrolled")
+		.addIndicators()
 		.addTo(controller);
 })
 
