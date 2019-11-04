@@ -70,6 +70,7 @@ h2
 		background-color: #4958FF
 		opacity: 0
 		transition: opacity ease-in-out .2s
+		border-radius: 27px
 
 	span
 		position: relative
@@ -148,6 +149,7 @@ h2
 		left: 0
 		top: 0
 		z-index: -1
+		transform: translateY(-300px)
 		background-image: url("../img/hero-bg.jpg")
 		background-size: cover
 .navigation
@@ -170,9 +172,14 @@ h2
 .projects
 	padding-left: 230px
 	padding-right: 230px
+	position: relative
 	margin-bottom: -120px
 	margin-top: 245px
 	width: 100%
+	opacity: 0
+	transition: opacity 0.2s ease-in-out
+	&.scrolled
+		opacity: 1
 	&__header
 		margin-top: 100px
 		margin-bottom: 90px
@@ -180,11 +187,13 @@ h2
 		padding-left: 148px
 		padding-right: 148px
 		padding-bottom: 128px
+		z-index: 2
 		+flexbox(center, center)
 		flex-wrap: wrap
 	&__background
 		backdrop-filter: blur(50px)
 		+flexbox(center, center, column)
+		position: relative
 	&__item
 		width: calc(100%/3 - 12px)
 		height: 380px
@@ -196,3 +205,13 @@ h2
 			object-fit: cover
 		&.no_margin
 			margin-right: 0
+	&__cifre
+		position: absolute
+		+fblack
+		font-size: 490px
+		color: #26282D
+		opacity: 0.81
+		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0599323)
+		right: 0%
+		top: 50%
+		transform: translate(85px, calc(-50% + 50px))

@@ -36,7 +36,7 @@ $(document).ready(function(){
 	const background = new TimelineLite();
 	background.add(
 		TweenLite.to('.main__background', 1, {
-			opacity: 0.9,
+			y: 0,
 			ease: Power2.easeOut,
 		})
 	)
@@ -46,6 +46,13 @@ $(document).ready(function(){
 		triggerHook: 0,
 	})
 	.setTween(background)
+	.addTo(controller)
+
+	const showing_trigger = new ScrollMagic.Scene({
+		triggerElement: ".projects",
+		triggerHook: 0.5,
+	})
+	.setClassToggle(".projects", "scrolled")
 	.addIndicators()
 	.addTo(controller)
 
