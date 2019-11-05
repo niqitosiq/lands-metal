@@ -30,9 +30,9 @@ $(window).on("load", function(){
 	.on("enter", el => {
 		$(el).addClass("vi");
 	})
-	.on("exit", el => {
+	/*.on("exit", el => {
 		$(el).removeClass("vi")
-	})
+	})*/
 	$(window).on("scroll", function(){
 	})
 })
@@ -127,7 +127,6 @@ function scrollAnimation(){
 			triggerHook: 0.75,
 			duration: $(".clients").outerHeight(),
 		})
-		.addIndicators()
 		.setTween(clientTl)
 		.addTo(controller);
 	}

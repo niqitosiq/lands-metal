@@ -365,9 +365,10 @@ section
 			margin-right: 0
 			&:nth-child(2n)
 				margin-left: 10px
-
 		+below(720px)
 			height: 200px
+		+below(480px)
+			height: 150px
 		/* adaptive */
 
 		img
@@ -442,6 +443,12 @@ section
 	padding-top: 275px
 	padding-bottom: 300px
 	overflow: hidden
+	/* adaptive */
+	+below(1460px)
+		padding-top: 230px
+	+below(960px)
+		padding-top: 30px
+	/* adaptive */
 	.container
 		flex-direction: column
 		z-index: 2
@@ -449,6 +456,8 @@ section
 		text-align: center
 		opacity: 0
 		transition: opacity ease-in-out 1s 0s
+		position: relative
+		z-index: 5
 		&.vi
 			opacity: 1
 	&__backword
@@ -461,6 +470,21 @@ section
 		opacity: 0
 		transform: translateX(230px)
 		z-index: 1
+		// animation
+		+below(720px)
+			transition: transform 4s ease-in-out, opacity 4s ease-in-out
+			&.vi
+				transform: translateX(0px)
+				opacity: 0.4
+		// animation
+		/* adaptive */
+		+below(1460px)
+			font-size: 250px
+		+below(960px)
+			font-size: 200px
+		+below(720px)
+			font-size: 100px
+		/* adaptive */
 	&__slider
 		z-index: 1
 		height: 610px
@@ -474,19 +498,45 @@ section
 		&.vi
 			opacity: 1
 		// animation
+		/* adaptive */
+		+below(1460px)
+			height: auto
+		+below(1230px)
+			margin-left: auto
+		+below(960px)
+			width: 100%
+		+below(480px)
+			margin-top: 0px
+		/* adaptive */
 		>.swiper-container
 			width: 873px
 			margin-left: 0
+			/* adaptive */
+			+below(1460px)
+				width: 100%
+			+below(1230px)
+				width: 70%
+				margin-left: 15% 
+			+below(720px)
+				width: 100%
+				margin-left: 0
+			/* adaptive */
 	&__slide
 		position: relative
 		transform: scale(0.9)
 		transition: transform ease-in-out 1s
 		&.swiper-slide-active
 			transform: scale(1)
-	&__wrapper img
-		width: 100%
-		height: 100%
-		object-fit: cover
+	&__wrapper 
+		height: 607px
+		+below(720px)
+			height: 400px
+		+below(480px)
+			height: 200px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
 	&__image, &__wrapper
 		height: 100%
 		position: relative
@@ -494,6 +544,11 @@ section
 		height: 100%
 		position: absolute
 		top: 0%
+
+		// adaptive
+		+below(1230px)
+			position: static
+		// adaptive
 	&__description
 		position: absolute
 		left: 0
@@ -505,6 +560,18 @@ section
 		padding-left: 79px
 		padding-top: 102px
 		padding-right: 70px
+		// adaptive
+		+below(1230px)
+			position: static
+			transform: translate(0, 0)
+			width: 100%
+			padding-top: 40px
+			padding-bottom: 40px
+			height: auto
+		+below(960px)
+			padding-left: 40px
+			padding-right: 40px
+		// adaptive
 		h3
 			+fb
 			text-transform: uppercase
@@ -526,16 +593,38 @@ section
 		position: absolute
 		top: 50%
 		z-index: 6
+		// adaptive
+		+below(720px)
+			top: 100%
+		// adaptive
 		&_left
 			left: 0
-			transform: translateX(-300px)
+			transform: translate(-300px, -50%)
+			// adaptive
+			+below(1230px)
+				transform: translate(0, -50%)
+			+below(720px)
+				transform: translate(0, 50%)
+			// adaptive
+
 		&_right
 			right: 0
-			transform: translateX(160px) rotate(180deg)
+			transform: translate(160px, -50%) rotate(180deg)
+			// adaptive
+			+below(1230px)
+				transform: translate(0, -50%) rotate(180deg)
+			+below(720px)
+				transform: translate(0, 50%) rotate(180deg)
+			// adaptive
 
 		svg 
 			font-size: 20px
-	
+.swiper-wrapper
+	align-items: center
+	// adaptive 
+	+below(720px)
+		align-items: flex-start
+	// adaptive
 .time-manager
 	+flexbox(flex-start, flex-start)
 	padding-left: 162px
@@ -547,6 +636,16 @@ section
 	&.vi
 		opacity: 1
 	// animation
+	// adaptive
+	+below(1230px)
+		padding-left: 0
+	+below(720px)
+		width: 100%
+		overflow-x: scroll
+		padding-bottom: 30px
+	+below(480px)
+		margin-top: 30px
+	// adaptive
 	&__item
 		font-size: 14px
 		letter-spacing: 0.56px
@@ -561,6 +660,10 @@ section
 			.time-manager__line
 				transform: scaleX(1)
 				max-width: 185px
+				// adaptive
+				+below(720px)
+					max-width: 40px
+				// adaptive
 	&__line
 		width: 185px
 		height: 1px
@@ -570,3 +673,7 @@ section
 		transform-origin: left center
 		transition: transform ease-in-out .4s, max-width ease-in-out .4s
 		max-width: 0
+		// adaptive
+		+below(720px)
+			width: 40px
+		// adaptive

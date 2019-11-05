@@ -130,3 +130,25 @@
     font-style: normal;
     font-weight: 300;
 }
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("Montserrat-Regular.eot");
+    src: url("Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-Regular.woff2") format("woff2"),
+         url("Montserrat-Regular.woff") format("woff"),
+         url("Montserrat-Regular.ttf") format("ttf"),
+         url("Montserrat-Regular.svg#Montserrat-Regular") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("Montserrat-Regular.eot");
+    src: url("Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
+         url("Montserrat-Regular.woff2") format("woff2"),
+         url("Montserrat-Regular.woff") format("woff"),
+         url("Montserrat-Regular.ttf") format("ttf"),
+         url("Montserrat-Regular.svg#Montserrat-Regular") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}
