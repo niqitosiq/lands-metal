@@ -7,10 +7,13 @@ import inView from 'in-view';
 
 
 $(document).ready(function(){
-	scrollAnimation();	
+	if ($(window).width()>720){
+		scrollAnimation();	
+	}
 })
 $(window).on("load", function(){
 	$("body, .header, #main .anim").addClass("loaded");
+	inView.threshold(0.2);
 	$(window).on("scroll", function(){
 		inView(".anim")
 		.on("enter", el => {

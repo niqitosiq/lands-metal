@@ -22,11 +22,11 @@ block content
 				+e.A(href="#").elem(class=index === 0 ? "active" : "")
 					+e.SPAN.num= "0" + (index+1) 
 					+e.SPAN.name= val
-		+b.projects()
+		+b.projects
 			+e.background
-				+e.H2.header
+				+e.H2.header.anim
 					| Наши проекты
-				+e.wrapper
+				+e.wrapper.anim
 					each val in [1,2,3,4,5,6]
 						+e.item(class=val%3 === 0 ? "no_margin" : "")
 							img.image(src="img/projects/" + val + ".jpg")

@@ -142,6 +142,7 @@ body {
   font-family: 'Montserrat-Regular', serif;
   transition: opacity ease-in-out .4s;
   background-color: #0E1114;
+  overflow-x: hidden;
 }
 
 body.loaded {
@@ -172,6 +173,8 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #fff;
+  /* adaptive */
+  /* adaptive */
 }
 
 .button {
@@ -233,6 +236,8 @@ h2 {
   transition: transform ease-in-out 1s 2.5s, padding-top ease-in-out .2s, padding-bottom ease-in-out .2s;
   transition: transform ease-in-out 1s 2.5s, padding-top ease-in-out .2s, padding-bottom ease-in-out .2s, -webkit-transform ease-in-out 1s 2.5s;
   /* animation */
+  /* adaptive */
+  /* adaptive */
 }
 
 .header.loaded {
@@ -245,19 +250,27 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  /* adaptive */
+  /* adaptive */
 }
 
 .header__logo svg {
   width: 117px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .header__phone {
   font-family: 'Montserrat-Medium', serif;
   font-size: 22px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .header__lead {
   margin-left: 60px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .header:after {
@@ -321,6 +334,8 @@ h2 {
 .main__header {
   font-size: 50px;
   letter-spacing: -.8px;
+  /* adaptive */
+  /* adaptive */
   line-height: 1.26;
   color: #fff;
   text-transform: uppercase;
@@ -334,6 +349,8 @@ h2 {
   margin-top: 54px;
   padding-left: 70px;
   padding-right: 65px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .main__background {
@@ -351,6 +368,8 @@ h2 {
   opacity: 0;
   transition: opacity ease-in-out 1s 1.5s;
   /* animation */
+  /* adaptive */
+  /* adaptive */
 }
 
 .main__background.loaded {
@@ -362,12 +381,16 @@ h2 {
   position: fixed;
   top: 292px;
   left: 54px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .navigation__elem {
   display: block;
   margin-bottom: 34px;
   font-size: 12px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .navigation__elem.active {
@@ -378,6 +401,11 @@ h2 {
   margin-left: 6px;
 }
 
+.navigation__num {
+  /* adaptive */
+  /* adaptive */
+}
+
 .projects {
   padding-left: 215px;
   padding-right: 215px;
@@ -385,6 +413,8 @@ h2 {
   margin-bottom: -120px;
   margin-top: 245px;
   width: 100%;
+  /* adaptive */
+  /* adaptive */
 }
 
 .projects__header {
@@ -393,6 +423,8 @@ h2 {
   opacity: 0;
   -webkit-transform: translateY(100px);
   transform: translateY(100px);
+  /* adaptive */
+  /* adaptive */
 }
 
 .projects__wrapper {
@@ -408,6 +440,8 @@ h2 {
   opacity: 0;
   -webkit-transform: translateY(100px);
   transform: translateY(100px);
+  /* adaptive */
+  /* adaptive */
 }
 
 .projects__background {
@@ -425,6 +459,8 @@ h2 {
   height: 380px;
   margin-bottom: 10px;
   margin-right: 12px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .projects__item img {
@@ -469,6 +505,8 @@ h2 {
   padding-right: 230px;
   /* animation */
   /* animation */
+  /* adaptive */
+  /* adaptive */
 }
 
 .lines__wrapper > * {
@@ -539,8 +577,28 @@ h2 {
   .main__container {
     padding-left: 300px;
   }
+}
+
+@media only screen and (max-width: 1650px) {
+  .projects__wrapper {
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+  .projects__item {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
   .main__header {
-    font-size: 40px;
+    font-size: 45px;
+  }
+  .projects__header {
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+  .projects__item {
+    height: 260px;
   }
 }
 
@@ -550,6 +608,163 @@ h2 {
   }
   .navigation {
     top: 200px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .main__header {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .main__header {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .header {
+    padding-right: 47px;
+  }
+  .main__container {
+    padding-left: 55px;
+  }
+  .main__header {
+    font-size: 35px;
+  }
+  .navigation {
+    left: auto;
+    right: 54px;
+  }
+  .navigation__elem {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .navigation__num {
+    order: 1;
+    margin-left: 6px;
+  }
+  .projects {
+    margin-top: 180px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .lines__wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .navigation {
+    display: none;
+  }
+  .projects__item {
+    width: calc(50% - 5px);
+    margin-right: 0;
+  }
+  .projects__item:nth-child(2n) {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  h2 {
+    font-size: 28px;
+  }
+  .header__left {
+    height: 54px;
+  }
+  .header__lead {
+    display: none;
+  }
+  .main__container {
+    padding-top: 200px;
+  }
+  .main__header {
+    font-size: 30px;
+    padding-right: 20px;
+  }
+  .main__button {
+    margin-top: 30px;
+  }
+  .main__background {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  .projects {
+    margin-top: 130px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .projects__header {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  }
+  .projects__header.vi {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  .projects__wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  }
+  .projects__wrapper.vi {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  .projects__item {
+    height: 200px;
+  }
+  .lines__line_l2, .lines__line_l5 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h2 {
+    font-size: 24px;
+  }
+  .header {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .header__logo svg {
+    width: 80px;
+  }
+  .header__phone {
+    font-size: 18px;
+  }
+  .main__container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 150px;
+  }
+  .main__header {
+    font-size: 25px;
+  }
+  .projects__wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .projects__background {
+    border-radius: 30px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  h2 {
+    font-size: 20px;
   }
 }
 

@@ -31,6 +31,7 @@ body
 	+fr
 	transition: opacity ease-in-out .4s
 	background-color: #0E1114
+	overflow-x: hidden
 	&.loaded
 		opacity: 1!important
 h1,h2,h3,h4,p
@@ -50,6 +51,14 @@ h2
 	text-transform: uppercase
 	letter-spacing: 1px
 	color: #fff
+	/* adaptive */
+	+below(720px)
+		font-size: 28px
+	+below(480px)
+		font-size: 24px
+	+below(340px)
+		font-size: 20px
+	/* adaptive */
 .button
 	span
 		+fsb
@@ -98,15 +107,39 @@ h2
 	&.loaded
 		transform: translateY(0)
 	/* animation */
+	/* adaptive */
+	+below(1100px)
+		padding-right: 47px
+	+below(480px)
+		padding-right: 25px
+		padding-left: 25px
+	/* adaptive */
 	&__left
 		+flexbox(center, space-between)
+		/* adaptive */
+		+below(720px)
+			height: 54px
+		/* adaptive */
 	&__logo svg
 		width: 117px
+		/* adaptive */
+		+below(480px)
+			width: 80px
+		/* adaptive */
 	&__phone
 		+fm
 		font-size: 22px
+		/* adaptive */
+		+below(480px)
+			font-size: 18px
+		/* adaptive */
+
 	&__lead
 		margin-left: 60px
+		/* adaptive */
+		+below(720px)
+			display: none
+		/* adaptive */
 	+pseudo
 	&:after
 		width: 100%
@@ -146,12 +179,33 @@ h2
 			padding-left: 300px
 		+below(1450px)
 			padding-top: 190px
+		+below(1100px)
+			padding-left: 55px
+		+below(720px)
+			padding-top: 200px
+		+below(480px)
+			padding-left: 20px
+			padding-right: 20px
+			padding-top: 150px
 		/* adaptive */
 	&__header
 		font-size: 50px
 		letter-spacing: -.8px
-		+below(1910px)
+		/* adaptive */
+		+below(1500px)
+			font-size: 45px
+		+below(1400px)
 			font-size: 40px
+		+below(1240px)
+			font-size: 30px
+		+below(1100px)
+			font-size: 35px
+		+below(720px)
+			font-size: 30px
+			padding-right: 20px
+		+below(480px)
+			font-size: 25px
+		/* adaptive */
 		line-height: 1.26
 		color: #fff
 		text-transform: uppercase
@@ -161,6 +215,10 @@ h2
 		margin-top: 54px
 		padding-left: 70px
 		padding-right: 65px
+		/* adaptive */
+		+below(720px)
+			margin-top: 30px
+		/* adaptive */
 	position: relative
 	&__background
 		position: absolute
@@ -178,22 +236,44 @@ h2
 		&.loaded
 			opacity: 1
 		/* animation */
+		/* adaptive */
+		+below(720px)
+			transform: translateY(0px)
+		/* adaptive */
 .navigation
 	color: #fff
 	position: fixed
 	top: 292px
 	left: 54px
-
+	
+	/* adaptive */
 	+below(1450px)
 		top: 200px
+	+below(1100px)
+		left: auto
+		right: 54px
+	+below(960px)
+		display: none
+	/* adaptive */
 	&__elem
 		display: block
 		margin-bottom: 34px
 		font-size: 12px
+		/* adaptive */
+		+below(1100px)
+			display: flex
+			justify-content: flex-end
+		/* adaptive */
 		&.active
 			color: #82B1E2
 	&__name
 		margin-left: 6px
+	&__num
+		/* adaptive */
+		+below(1100px)
+			order: 1
+			margin-left: 6px
+		/* adaptive */
 
 .projects
 	padding-left: 215px
@@ -202,11 +282,34 @@ h2
 	margin-bottom: -120px
 	margin-top: 245px
 	width: 100%
+	/* adaptive */
+	+below(1100px)
+		margin-top: 180px
+		padding-left: 50px
+		padding-right: 50px
+	+below(720px)
+		margin-top: 130px
+		padding-top: 50px
+		padding-left: 20px
+		padding-right: 20px
+	/* adaptive */
 	&__header
 		margin-top: 100px
 		margin-bottom: 90px
 		opacity: 0
 		transform: translateY(100px)
+		/* adaptive */
+		+below(1500px)
+			margin-top: 60px
+			margin-bottom: 50px
+		+below(720px)
+			margin-top: 40px
+			margin-bottom: 30px
+			transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out
+			&.vi
+				opacity: 1
+				transform: translateY(0px)
+		/* adaptive */
 	&__wrapper
 		padding-left: 148px
 		padding-right: 148px
@@ -216,15 +319,48 @@ h2
 		flex-wrap: wrap
 		opacity: 0
 		transform: translateY(100px)
+		/* adaptive */
+		+below(1650px)
+			padding-left: 110px
+			padding-right: 110px
+		+below(720px)
+			padding-left: 50px
+			padding-right: 50px
+			transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out
+			&.vi
+				opacity: 1
+				transform: translateY(0px)
+		+below(480px)
+			padding-left: 20px
+			padding-right: 20px
+		/* adaptive */
+
 	&__background
 		backdrop-filter: blur(50px)
 		+flexbox(center, center, column)
 		position: relative
+		+below(480px)
+			border-radius: 30px
 	&__item
 		width: calc(100%/3 - 12px)
 		height: 380px
 		margin-bottom: 10px
 		margin-right: 12px
+		/* adaptive */
+		+below(1650px)
+			height: 300px
+		+below(1500px)
+			height: 260px
+		+below(960px)
+			width: calc(50% - 5px)
+			margin-right: 0
+			&:nth-child(2n)
+				margin-left: 10px
+
+		+below(720px)
+			height: 200px
+		/* adaptive */
+
 		img
 			width: 100%
 			height: 100%
@@ -243,7 +379,6 @@ h2
 		transform: translate(85px, calc(-50% + 50px))
 .lines
 	z-index: -1
-
 	&__wrapper
 		+flexbox(flex-start, space-between)
 		position: absolute
@@ -263,6 +398,11 @@ h2
 			>*
 				transform: scaleY(1)
 		/* animation */
+		/* adaptive */
+		+below(1100px)
+			padding-left: 50px
+			padding-right: 50px
+		/* adaptive */
 	&__line
 		top: 0
 		height: 940px
@@ -270,6 +410,9 @@ h2
 		background-color: #AEAEAE
 		opacity: .15
 		position: relative
+		&_l2, &_l5
+			+below(720px)
+				display: none
 		&_l2
 			left: -10%
 		&_l3
