@@ -406,6 +406,49 @@ h2 {
   transform: translate(85px, calc(-50% + 50px));
 }
 
+.lines {
+  z-index: -1;
+}
+
+.lines__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 230px;
+  padding-right: 230px;
+}
+
+.lines__line {
+  top: 0;
+  height: 940px;
+  width: 1px;
+  background-color: #AEAEAE;
+  opacity: .15;
+  position: relative;
+}
+
+.lines__line_l2 {
+  left: -10%;
+}
+
+.lines__line_l3 {
+  left: -5.7%;
+}
+
+.lines__line_l4 {
+  left: 11%;
+}
+
+.lines__line_l5 {
+  left: 6%;
+}
+
 @media only screen and (max-width: 1910px) {
   .main__container {
     padding-left: 300px;

@@ -68,7 +68,6 @@ $(document).ready(function(){
 		duration: 300
 	})
 	.setTween(projects_TL)
-	.addIndicators()
 	.addTo(controller)
 
 })
