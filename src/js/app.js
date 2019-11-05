@@ -48,11 +48,26 @@ $(document).ready(function(){
 	.setTween(background)
 	.addTo(controller)
 
+
+	const projects_TL = new TimelineLite();
+	projects_TL.to('.projects__header', 1, {
+		opacity: 1,
+		y: 0
+	}, "header");
+	projects_TL.to('.projects__wrapper', 1, {
+		opacity: 1,
+		y: 0
+	}, "images");
+	projects_TL.add("header");
+	projects_TL.add("images");
+
+
 	const showing_trigger = new ScrollMagic.Scene({
 		triggerElement: ".projects",
 		triggerHook: 0.5,
+		duration: 300
 	})
-	.setClassToggle(".projects", "scrolled")
+	.setTween(projects_TL)
 	.addIndicators()
 	.addTo(controller)
 

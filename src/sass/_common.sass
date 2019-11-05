@@ -149,7 +149,7 @@ h2
 		left: 0
 		top: 0
 		z-index: -1
-		transform: translateY(-300px)
+		transform: translateY(-400px)
 		background-image: url("../img/hero-bg.jpg")
 		background-size: cover
 .navigation
@@ -176,13 +176,11 @@ h2
 	margin-bottom: -120px
 	margin-top: 245px
 	width: 100%
-	opacity: 0
-	transition: opacity 0.2s ease-in-out
-	&.scrolled
-		opacity: 1
 	&__header
 		margin-top: 100px
 		margin-bottom: 90px
+		opacity: 0
+		transform: translateY(100px)
 	&__wrapper
 		padding-left: 148px
 		padding-right: 148px
@@ -190,6 +188,8 @@ h2
 		z-index: 2
 		+flexbox(center, center)
 		flex-wrap: wrap
+		opacity: 0
+		transform: translateY(100px)
 	&__background
 		backdrop-filter: blur(50px)
 		+flexbox(center, center, column)
