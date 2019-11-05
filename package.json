@@ -19,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "aos": "^2.3.4",
     "autoprefixer": "^9.6.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
@@ -55,6 +56,7 @@
     "gulp-util": "^3.0.8",
     "gulp-watch": "^5.0.1",
     "imports-loader": "^0.8.0",
+    "in-view": "^0.6.1",
     "jquery": "^3.4.1",
     "map-stream": "0.0.7",
     "require-dir": "^1.2.0",

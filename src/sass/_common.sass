@@ -29,7 +29,10 @@ $accent: #2F41FF
 body
 	background: #fff
 	+fr
-	padding-bottom: 400px
+	transition: opacity ease-in-out .4s
+	background-color: #0E1114
+	&.loaded
+		opacity: 1!important
 h1,h2,h3,h4,p
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -89,6 +92,12 @@ h2
 	padding-top: 41px
 	z-index: 10
 	color: #fff
+	/* animation */
+	transform: translateY(-100%)
+	transition: transform ease-in-out 1s 2.5s, padding-top ease-in-out .2s, padding-bottom ease-in-out .2s
+	&.loaded
+		transform: translateY(0)
+	/* animation */
 	&__left
 		+flexbox(center, space-between)
 	&__logo svg
@@ -98,7 +107,6 @@ h2
 		font-size: 22px
 	&__lead
 		margin-left: 60px
-	transition: padding-top ease-in-out .2s, padding-bottom ease-in-out .2s
 	+pseudo
 	&:after
 		width: 100%
@@ -123,10 +131,22 @@ h2
 		align-self: flex-start
 		padding-top: 281px
 		padding-left: 375px
+		/* animation */
+		>*
+			opacity: 0
+			transition: opacity ease-in-out 1s
+			+durationi(500ms, 2, 2600ms)
+		&.loaded
+			>*
+				opacity: 1
+		/* animation */
+
+		/* adaptive */
 		+below(1910px)
 			padding-left: 300px
 		+below(1450px)
 			padding-top: 190px
+		/* adaptive */
 	&__header
 		font-size: 50px
 		letter-spacing: -.8px
@@ -152,6 +172,12 @@ h2
 		transform: translateY(-400px)
 		background-image: url("../img/hero-bg.jpg")
 		background-size: cover
+		/* animation */
+		opacity: 0
+		transition: opacity ease-in-out 1s 1.5s
+		&.loaded
+			opacity: 1
+		/* animation */
 .navigation
 	color: #fff
 	position: fixed
@@ -170,8 +196,8 @@ h2
 		margin-left: 6px
 
 .projects
-	padding-left: 230px
-	padding-right: 230px
+	padding-left: 215px
+	padding-right: 215px
 	position: relative
 	margin-bottom: -120px
 	margin-top: 245px
@@ -227,6 +253,16 @@ h2
 		height: 100%
 		padding-left: 230px
 		padding-right: 230px
+		/* animation */
+		>*
+			transform: scaleY(0)
+			transform-origin: top left
+			transition: transform ease-in-out 1s
+			+durationi(300ms, 6, 300ms)
+		&.loaded
+			>*
+				transform: scaleY(1)
+		/* animation */
 	&__line
 		top: 0
 		height: 940px
@@ -234,8 +270,6 @@ h2
 		background-color: #AEAEAE
 		opacity: .15
 		position: relative
-		&_l1
-
 		&_l2
 			left: -10%
 		&_l3
@@ -244,4 +278,3 @@ h2
 			left: 11%
 		&_l5
 			left: 6%
-		&_l6

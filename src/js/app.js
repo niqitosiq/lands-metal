@@ -3,11 +3,28 @@ import { TimelineLite, TweenLite, Linear } from 'gsap';
 import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
-
+import inView from 'in-view';
 
 
 $(document).ready(function(){
+	scrollAnimation();	
+})
+$(window).on("load", function(){
+	$("body, .header, #main .anim").addClass("loaded");
+	$(window).on("scroll", function(){
+		inView(".anim")
+		.on("enter", el => {
+			$(el).addClass("vi");
+		})
+		.on("exit", el => {
+			$(el).removeClass("vi")
+		})
+	})
+})
 
+
+
+function scrollAnimation(){
 	// main animation
 	const tween = new TimelineLite();
 	tween.add(
@@ -31,14 +48,15 @@ $(document).ready(function(){
 		.setTween(tween)
 		.setClassToggle(".header", "scrolled")
 		.addTo(controller);
-
-
 	const background = new TimelineLite();
-	background.add(
-		TweenLite.to('.main__background', 1, {
+	background.to('.main__background', 1, {
 			y: 0,
 			ease: Power2.easeOut,
-		})
+		}, "paral").to('.lines__wrapper', 1, {
+			opacity: 0,
+		}, "paral")
+	background.add(
+		"paral"
 	)
 	const main_scene = new ScrollMagic.Scene({
 		triggerElement: "#main",
@@ -47,8 +65,6 @@ $(document).ready(function(){
 	})
 	.setTween(background)
 	.addTo(controller)
-
-
 	const projects_TL = new TimelineLite();
 	projects_TL.to('.projects__header', 1, {
 		opacity: 1,
@@ -60,8 +76,6 @@ $(document).ready(function(){
 	}, "images");
 	projects_TL.add("header");
 	projects_TL.add("images");
-
-
 	const showing_trigger = new ScrollMagic.Scene({
 		triggerElement: ".projects",
 		triggerHook: 0.5,
@@ -69,6 +83,4 @@ $(document).ready(function(){
 	})
 	.setTween(projects_TL)
 	.addTo(controller)
-
-})
-
+}
