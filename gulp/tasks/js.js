@@ -30,7 +30,7 @@ gulp.task('js', function (done) {
                 ]
             }
         }))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(config.dest.js+'/'));
 })
 	

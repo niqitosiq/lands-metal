@@ -25,15 +25,17 @@
 
 
 $accent: #2F41FF
-
+$black: #323941
 body
-	background: #fff
 	+fr
 	transition: opacity ease-in-out .4s
 	background-color: #0E1114
-	overflow-x: hidden
+	width: 100%
 	&.loaded
 		opacity: 1!important
+.out
+	width: 100%
+	overflow-x: hidden
 h1,h2,h3,h4,p
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -48,9 +50,9 @@ h1,h2,h3,h4
 	+feb
 h2
 	font-size: 40px
+	color: $black
 	text-transform: uppercase
 	letter-spacing: 1px
-	color: #fff
 	/* adaptive */
 	+below(720px)
 		font-size: 28px
@@ -58,6 +60,25 @@ h2
 		font-size: 24px
 	+below(340px)
 		font-size: 20px
+	/* adaptive */
+
+.container
+	padding-left: 215px
+	padding-right: 215px
+	position: relative
+	width: 100%
+	max-width: 1903px
+	+flexbox()
+	/* adaptive */
+	+below(1100px)
+		margin-top: 180px
+		padding-left: 50px
+		padding-right: 50px
+	+below(720px)
+		margin-top: 130px
+		padding-top: 50px
+		padding-left: 20px
+		padding-right: 20px
 	/* adaptive */
 .button
 	span
@@ -156,9 +177,10 @@ h2
 
 		&:after
 			opacity: 1
-
-.main
+section
 	+flexbox(center, flex-start, column)
+.main
+	z-index: 6
 	&__container
 		+flexbox(flex-start, flex-start, column)
 		align-self: flex-start
@@ -274,30 +296,17 @@ h2
 			order: 1
 			margin-left: 6px
 		/* adaptive */
-
 .projects
-	padding-left: 215px
-	padding-right: 215px
-	position: relative
 	margin-bottom: -120px
 	margin-top: 245px
-	width: 100%
-	/* adaptive */
-	+below(1100px)
-		margin-top: 180px
-		padding-left: 50px
-		padding-right: 50px
-	+below(720px)
-		margin-top: 130px
-		padding-top: 50px
-		padding-left: 20px
-		padding-right: 20px
-	/* adaptive */
+	+below(480px)
+		margin-top: 0px
 	&__header
 		margin-top: 100px
 		margin-bottom: 90px
 		opacity: 0
 		transform: translateY(100px)
+		color: #fff
 		/* adaptive */
 		+below(1500px)
 			margin-top: 60px
@@ -379,6 +388,7 @@ h2
 		transform: translate(85px, calc(-50% + 50px))
 .lines
 	z-index: -1
+
 	&__wrapper
 		+flexbox(flex-start, space-between)
 		position: absolute
@@ -386,15 +396,15 @@ h2
 		left: 0
 		width: 100%
 		height: 100%
-		padding-left: 230px
-		padding-right: 230px
+		padding-left: 215px
+		padding-right: 215px
 		/* animation */
 		>*
-			transform: scaleY(0)
+			transform: scaleY(0.00001)
 			transform-origin: top left
 			transition: transform ease-in-out 1s
 			+durationi(300ms, 6, 300ms)
-		&.loaded
+		&.loaded, &.vi
 			>*
 				transform: scaleY(1)
 		/* animation */
@@ -414,10 +424,113 @@ h2
 			+below(720px)
 				display: none
 		&_l2
-			left: -10%
+			left: -9%
 		&_l3
 			left: -5.7%
 		&_l4
 			left: 11%
 		&_l5
 			left: 6%
+		&_whites
+			background-color: #D8D8D8
+			opacity: 0.59
+.clients
+	width: 100%
+	background: #E1E7EC
+	position: relative
+	z-index: 5
+	padding-top: 275px
+	padding-bottom: 300px
+	overflow: hidden
+	.container
+		flex-direction: column
+		z-index: 2
+	&__header
+		text-align: center
+
+	&__backword
+		position: absolute
+		top: 35px
+		right: 100px
+		+fblack
+		font-size: 300px
+		color: #fff
+		transform: translateX(530px)
+		z-index: 1
+	&__slider
+		z-index: 1
+		width: 873px
+		height: 610px
+		margin-left: 162px
+		margin-right: 0
+		margin-top: 75px
+	&__slide
+		position: relative
+		transform: scale(0.9)
+		transition: transform ease-in-out 1s
+		&.swiper-slide-active
+			transform: scale(1)
+	&__wrapper img
+		width: 100%
+		height: 100%
+		object-fit: cover
+	&__image, &__wrapper
+		height: 100%
+		position: relative
+	&__prx
+		height: 100%
+		position: absolute
+		top: 0%
+	&__description
+		position: absolute
+		left: 0
+		top: 50%
+		transform: translate(-160px, -50%)
+		width: 370px
+		height: 370px
+		background: #fff
+		padding-left: 79px
+		padding-top: 102px
+		padding-right: 70px
+		h3
+			+fb
+			text-transform: uppercase
+			font-weight: 300
+			font-size: 20px
+			margin-bottom: 27px
+			color: $accent
+		p
+			width: 100%
+			font-size: 14px
+			line-height: 164%
+
+
+	
+.time-manager
+	+flexbox(flex-start, flex-start)
+	padding-left: 162px
+	margin-top: 112px
+	z-index: 2
+	&__item
+		font-size: 14px
+		letter-spacing: 0.56px
+		+fsb
+		color: $black
+		margin-right: 10px
+		transition: color ease-in-out .4s
+		cursor: pointer
+		+flexbox(center, center)
+		&.active
+			color: $accent
+			.time-manager__line
+				transform: scaleX(1)
+				max-width: 185px
+	&__line
+		width: 185px
+		height: 1px
+		background-color: #979797
+		margin-left: 10px
+		transform: scaleX(0)
+		transform-origin: left center
+		transition: transform ease-in-out .4s, max-width ease-in-out .4s
+		max-width: 0
