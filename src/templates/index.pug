@@ -45,9 +45,9 @@ block content
 				+e.line._l6
 	+b.SECTION.clients#clients
 		.container
-			+e.H2.header
+			+e.H2.header.anim
 				| Постоянные клиенты
-			+b.time-manager
+			+b.time-manager.anim
 				+e.item.active
 					span 2015
 					+e.line
@@ -65,18 +65,23 @@ block content
 					+e.line
 			+e.backword
 				span КЛИЕНТЫ
-			
-			+e.__slider.swiper-container
-				.swiper-wrapper
-					each val, index in descrs
-						+e.__slide.swiper-slide
-							+e.image
-								+e.wrapper
-									img(src="img/leads/" + (index+1) + ".jpg")
-								+e.prx(data-swiper-parallax="-400", data-swiper-parallax-opacity="0")
-									+e.description
-										h3= val[0]
-										p= val[1]
+			+e.__slider.anim
+				+e.arrow._right
+					+i("arrow")
+				+e.arrow._left
+					+i("arrow")
+				.swiper-container
+					.swiper-wrapper
+						each val, index in descrs
+							+e.__slide.swiper-slide
+								+e.image
+									+e.wrapper
+										img(src="img/leads/" + (index+1) + ".jpg")
+									+e.prx(data-swiper-parallax="-400", data-swiper-parallax-opacity="0")
+										+e.description
+											h3= val[0]
+											p= val[1]
+				
 				
 		+b.lines._white
 			+e.wrapper.anim

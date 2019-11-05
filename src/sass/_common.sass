@@ -447,7 +447,10 @@ section
 		z-index: 2
 	&__header
 		text-align: center
-
+		opacity: 0
+		transition: opacity ease-in-out 1s 0s
+		&.vi
+			opacity: 1
 	&__backword
 		position: absolute
 		top: 35px
@@ -455,15 +458,25 @@ section
 		+fblack
 		font-size: 300px
 		color: #fff
-		transform: translateX(530px)
+		opacity: 0
+		transform: translateX(230px)
 		z-index: 1
 	&__slider
 		z-index: 1
-		width: 873px
 		height: 610px
 		margin-left: 162px
 		margin-right: 0
 		margin-top: 75px
+		position: relative
+		// animation
+		opacity: 0
+		transition: opacity ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+		// animation
+		>.swiper-container
+			width: 873px
+			margin-left: 0
 	&__slide
 		position: relative
 		transform: scale(0.9)
@@ -503,14 +516,37 @@ section
 			width: 100%
 			font-size: 14px
 			line-height: 164%
+	&__arrow
+		width: 93px
+		height: 93px
+		background-color: $accent
+		+flexbox(center, center)
+		border-radius: 100%
+		cursor: pointer
+		position: absolute
+		top: 50%
+		z-index: 6
+		&_left
+			left: 0
+			transform: translateX(-300px)
+		&_right
+			right: 0
+			transform: translateX(160px) rotate(180deg)
 
-
+		svg 
+			font-size: 20px
 	
 .time-manager
 	+flexbox(flex-start, flex-start)
 	padding-left: 162px
 	margin-top: 112px
 	z-index: 2
+	// animation
+	opacity: 0
+	transition: opacity ease-in-out 1s 0s
+	&.vi
+		opacity: 1
+	// animation
 	&__item
 		font-size: 14px
 		letter-spacing: 0.56px

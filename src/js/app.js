@@ -12,23 +12,28 @@ $(document).ready(function(){
 		$(".time-manager__item").removeClass("active");
 		$(this).addClass("active");
 	})
-	var clients = new Swiper('.clients__slider', {
+	var clients = new Swiper('.clients__slider .swiper-container', {
 		parallax: true,
-		duration: 2,
-		slidesPerView: 'auto'
+		speed: 1500,
+		slidesPerView: 'auto',
+	    navigation: {
+	        nextEl: '.clients__arrow_right',
+	        prevEl: '.clients__arrow_left',
+		},
 	})
 })
 $(window).on("load", function(){
 	$("body, .header, #main .anim").addClass("loaded");
-	inView.threshold(0.2);
+	inView.offset({top: 0, left: 0, right: 0, bottom: 300});
+
+	inView(".anim")
+	.on("enter", el => {
+		$(el).addClass("vi");
+	})
+	.on("exit", el => {
+		$(el).removeClass("vi")
+	})
 	$(window).on("scroll", function(){
-		inView(".anim")
-		.on("enter", el => {
-			$(el).addClass("vi");
-		})
-		.on("exit", el => {
-			$(el).removeClass("vi")
-		})
 	})
 })
 
@@ -58,6 +63,7 @@ function scrollAnimation(){
 				y: -150,
 				scale: 1.07,
 				ease: Power2.easeOut,
+				display: 'none',
 			})
 		)
 
@@ -108,5 +114,21 @@ function scrollAnimation(){
 		})
 		.setTween(projects_TL)
 		.addTo(controller)
+
+
+
+		const clientTl = new TimelineLite();
+		clientTl.to(".clients__backword", 1, {
+			x: 530,
+			opacity: 1
+		}, "client")
+		const clientScene = new ScrollMagic.Scene({
+			triggerElement: ".clients",
+			triggerHook: 0.75,
+			duration: $(".clients").outerHeight(),
+		})
+		.addIndicators()
+		.setTween(clientTl)
+		.addTo(controller);
 	}
 }
