@@ -42,7 +42,6 @@ body
 .out
 	width: 100%
 	overflow-x: hidden
-	padding-bottom: 1000px
 h1,h2,h3,h4,p
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -1054,10 +1053,7 @@ section
 		+below(480px)
 			padding-left: 10px
 			padding-right: 10px
-			
-			
 		/* adaptive */
-			
 	&__background
 		position: absolute
 		width: 100vw
@@ -1081,11 +1077,7 @@ section
 			padding-right: 40px
 		+below(650px)
 			flex-wrap: wrap
-
-			
-			
 		/* adaptive */
-			
 	&__item
 		width: calc((100% / 3) - 11px)
 		position: relative
@@ -1099,13 +1091,10 @@ section
 		+durationi(200ms, 3, 400ms)
 		/* animation */
 		/* adaptive */
-		
 		+below(650px)
 			width: 100%
 			margin-bottom: 10px
-		
 		/* adaptive */
-			
 	&__image
 		box-shadow: 0px 66px 411px rgba(0, 0, 0, 0.342767)
 		height: 579px
@@ -1118,10 +1107,7 @@ section
 			height: 250px
 		+below(480px)
 			height: 170px
-			
-			
 		/* adaptive */
-			
 		img
 			width: 100%
 			height: 100%
@@ -1152,10 +1138,162 @@ section
 			padding-left: 30px
 		+below(480px)
 			font-size: 20px
-			
 		/* adaptive */
 			
 
 .team
-	&__elem
-		height: 900px
+	position: relative
+	margin-top: 105px
+	overflow: hidden
+	.container
+		position: relative
+	&__background
+		position: absolute
+		width: 100%
+		height: 100%
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.471837) 1.29%, rgba(0, 0, 0, 0.0001) 100%)
+		/* animation */
+		opacity: 0
+		transition: opacity ease-in-out 1s 0.3s
+		&.vi
+			opacity: 1
+		/* animation */
+	&__arrow
+		width: 93px
+		height: 93px
+		background-color: $accent
+		+flexbox(center, center)
+		border-radius: 100%
+		cursor: pointer
+		position: absolute
+		top: 50%
+		z-index: 6
+		// adaptive
+		+below(720px)
+			top: 100%
+			width: 70px
+			height: 70px
+		// adaptive
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+			transform: translateY(-50%)
+		/* animation */
+			
+		&_left
+			left: 75px
+			transform: translate(-0px, -50%)
+			// adaptive
+			+below(1230px)
+				transform: translate(0, -50%)
+			+below(720px)
+				transform: translate(0, 50%)
+			// adaptive
+
+		&_right
+			right: 75px
+			transform: translate(0px, -50%) rotate(180deg)
+			// adaptive
+			+below(1230px)
+				transform: translate(0, -50%) rotate(180deg)
+			+below(720px)
+				transform: translate(0, 50%) rotate(180deg)
+			// adaptive
+			&.vi
+				transform: translateY(-50%) rotate(180deg)
+
+		svg 
+			font-size: 20px
+	&__slide
+		+flexbox(center, center)
+		color: #FFF
+	.swiper-container
+		overflow: hidden
+	&__description
+		width: 278px
+		font-size: 16px
+		line-height: 28px
+		margin-left: 70px
+		position: relative
+		z-index: 2
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 1s, transform ease-in-out 1s 1s
+		&.vi
+			opacity: 1
+			transform: translateY(0px)
+		/* animation */
+			
+	&__info
+		margin-right: 50px
+		position: relative
+		z-index: 2
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 0.8s, transform ease-in-out 1s 0.8s
+		&.vi
+			opacity: 1
+			transform: translateY(0px)
+		/* animation */
+			
+		h3
+			+fb
+			font-size: 40px
+			line-height: 37px
+			width: 320px
+		p
+			margin-top: 15px
+			font-size: 14px
+			line-height: 33px
+	&__image
+		margin-top: 100px
+		img
+			width: 100%
+			height: 100%
+			z-index: 2
+			position: relative
+			/* animation */
+			opacity: 0
+			transform: translateY(100px)
+			transition: opacity ease-in-out 1s 0.5s, transform ease-in-out 1s 0.5s
+			&.vi
+				opacity: 1
+				transform: translateY(0)
+			/* animation */
+		+pseudo
+		&:before
+			background-color: #000
+			width: 995px
+			height: 995px
+			left: 50%
+			top: 85%
+			transform: translate(-50%, -50%)
+			border-radius: 100%
+			z-index: 1
+			opacity: .33
+		&:after
+			background-color: #000
+			width: 738px
+			height: 738px
+			left: 50%
+			top: 85%
+			transform: translate(-50%, -50%)
+			border-radius: 100%
+			z-index: 0
+			opacity: .65
+		/* animation */
+		&:before, &:after
+			transform: translate(-50%, -50%) scale(0)
+			transition: transform ease-in-out 1s 0s
+		&.vi
+			&:before, &:after
+				transform: translate(-50%, -50%) scale(1)
+			&:after
+				transition-delay: 300ms
+		/* animation */
+			

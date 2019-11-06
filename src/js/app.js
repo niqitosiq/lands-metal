@@ -12,7 +12,7 @@ $(document).ready(function(){
 		$(".time-manager__item").removeClass("active");
 		$(this).addClass("active");
 	})
-	var clients = new Swiper('.clients__slider .swiper-container', {
+	const clients = new Swiper('.clients__slider .swiper-container', {
 		parallax: true,
 		speed: 1500,
 		slidesPerView: 'auto',
@@ -21,6 +21,27 @@ $(document).ready(function(){
 	        prevEl: '.clients__arrow_left',
 		},
 	})
+	const team = new Swiper('.team__slider .swiper-container', {
+		speed: 400,
+		slidesPerView: 'auto',
+		loop: true,
+		effect: 'fade',
+		fadeEffect: { 
+			crossFade: true 
+		},
+	    navigation: {
+	        nextEl: '.team__arrow_right',
+	        prevEl: '.team__arrow_left',
+		},
+	})
+	team.on('slideChangeTransitionStart', function(){
+		$(".team__slide .anim").removeClass("anim");
+		$(".team__slide .anim-sl").removeClass("vi");
+	});
+	team.on('slideChangeTransitionEnd', function(){
+		$(".team__slide.swiper-slide-active .anim-sl").addClass("vi");
+		//$(".team__slide.swiper-slide-active .anim-sl").addClass("anim");
+	});
 })
 $(window).on("load", function(){
 	$("body, .header, #main .anim").addClass("loaded");
