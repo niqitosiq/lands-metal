@@ -26,6 +26,7 @@ $(document).ready(function(){
 		slidesPerView: 'auto',
 		loop: true,
 		effect: 'fade',
+		touchRatio: 0,
 		fadeEffect: { 
 			crossFade: true 
 		},

@@ -160,3 +160,20 @@ block content
 										img(src="img/team/" + (index+1) + ".png")(class=index === 0 ? "anim" : "").anim-sl
 									+e.description(class=index === 0 ? "anim" : "").anim-sl
 										p= val[2]
+	+b.SECTION.contacts#contacts
+		.container
+			+e.H2.header.anim Контакты
+			+e.backword.backword.anim
+				| Ко
+				br
+				| нт
+				br
+				| ак
+				br
+				| ты
+			+e.wrapper
+				+e.info.anim
+					+e.A(href="#").addr Москва. Пархоменко 2 б
+					+e.A(href="#").phone +7 495 999-00-99
+					+e.A(href="#").email info@site.ru
+				+e.IMG(src="img/map.jpg").map.anim

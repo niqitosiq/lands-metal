@@ -1159,8 +1159,6 @@ section
 		+below(640px)
 			padding-left: 40px
 			padding-right: 40px
-			
-			
 		/* adaptive */
 	&__background
 		position: absolute
@@ -1295,7 +1293,7 @@ section
 		/* animation */
 		/* adaptive */
 		+below(1500px)
-			margin-right: 25px
+			margin-right: 0px
 		+below(960px)
 			order: 1
 			align-self: flex-end
@@ -1315,6 +1313,7 @@ section
 			+below(1500px)
 				font-size: 34px
 				width: auto
+				width: 270px
 			+below(1200px)
 				font-size: 28px
 				line-height: 28px
@@ -1393,4 +1392,82 @@ section
 			&:after
 				transition-delay: 300ms
 		/* animation */
+.contacts
+	background-color: #fff
+	overflow: hidden
+	padding-top: 140px
+	padding-bottom: 240px
+	&__header
+		text-align: center
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+			transform: translate(0px)
+		/* animation */
 			
+	&__backword
+		opacity: 1
+		text-transform: uppercase
+		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0311134)
+		line-height: 245px
+		top: 0px
+		/* animation */
+		opacity: 0
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+			transform: translateY(-50px)
+		/* animation */
+	&__map
+		z-index: 5
+		position: absolute
+		top: 50%
+		right: -305px
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+			transform: translateY(-50%)
+		/* animation */
+	&__info
+		width: 610px
+		height: 383px
+		z-index: 6
+		position: relative
+		+flexbox(flex-start, center, column)
+		box-shadow: 48px 59px 107px rgba(0, 0, 0, 0.0935861)
+		background-color: #fff
+		padding-left: 97px
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+			transform: translate(0px)
+		/* animation */
+	&__wrapper
+		margin-left: 250px
+		margin-top: 150px
+		position: relative
+	&__addr, &__addr:visited
+		font-size: 30px
+		line-height: 33px
+		color: $accent
+		+fb
+		margin-bottom: 30px
+	&__phone
+		font-size: 25px
+		line-height: 33px
+		color: $black
+		margin-bottom: 10px
+	&__email
+		font-size: 18px
+		line-height: 33px
+		color: #323941
+
