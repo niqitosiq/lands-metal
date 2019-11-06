@@ -2,27 +2,32 @@
 +font(Montserrat-Bold, Montserrat-Bold)
 =fb
   font-family: 'Montserrat-Bold', serif
-  font-weight: 500
+  font-weight: 100
 
 +font(Montserrat-ExtraBold, Montserrat-ExtraBold)
 =feb
   font-family: 'Montserrat-ExtraBold', serif
+  font-weight: 100
 
 +font(Montserrat-Medium, Montserrat-Medium)
 =fm
   font-family: 'Montserrat-Medium', serif
+  font-weight: 100
 
 +font(Montserrat-Regular, Montserrat-Regular)
 =fr
   font-family: 'Montserrat-Regular', serif
+  font-weight: 100
 
 +font(Montserrat-SemiBold, Montserrat-SemiBold)
 =fsb
   font-family: 'Montserrat-SemiBold', serif
+  font-weight: 100
 
 +font(Montserrat-Black, Montserrat-Black)
 =fblack
   font-family: 'Montserrat-Black', serif
+  font-weight: 100
 
 
 $accent: #2F41FF
@@ -30,7 +35,7 @@ $black: #323941
 body
 	+fr
 	transition: opacity ease-in-out .4s
-	background-color: #0E1114
+	background-color: #1C232E
 	width: 100%
 	&.loaded
 		opacity: 1!important
@@ -865,9 +870,10 @@ section
 			padding-left: 100px
 		+below(1000px)
 			padding-left: 40px
+		+below(480px)
+			padding-left: 10px
 			
 			
-		
 		/* adaptive */
 	&__header
 		text-align: center
@@ -883,7 +889,6 @@ section
 		/* adaptive */
 		+below(1500px)
 			margin-bottom: 60px
-			
 		/* adaptive */
 	&__backword
 		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0599323)
@@ -906,7 +911,6 @@ section
 		opacity: 0
 		transform: translateY(-100px)
 		transition: opacity ease-in-out 1s 0.8s, transform ease-in-out 1s 0.8s
-
 		&.vi
 			opacity: 1
 			transform: translateY(0)
@@ -931,7 +935,6 @@ section
 		+below(720px)
 			font-size: 22px
 		/* adaptive */
-			
 	&__position
 		font-size: 14px
 		line-height: 33px
@@ -958,7 +961,6 @@ section
 				width: 350px
 			+below(430px)
 				width: 100%
-				
 			/* adaptive */
 	&__text
 		font-size: 14px
@@ -984,13 +986,12 @@ section
 			transition-delay: 0
 			margin-top: 0
 		+below(480px)
-			padding-right: 50px
+			padding-right: 20px
 		/* adaptive */
 		svg
 			font-size: 74px
 			opacity: .1
 			margin-bottom: 18px
-	&__circles
 	&__circle
 		position: absolute
 		bottom: 0
@@ -1029,4 +1030,79 @@ section
 					transform: scale(1.65)
 					opacity: 1
 			/* adaptive */
-				
+
+.without
+	position: relative
+	&__header
+		color: #fff
+		margin-top: 124px
+		margin-bottom: 66px
+		/* animation */
+		opacity: 0
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+		/* animation */
+			
+	&__background
+		position: absolute
+		width: 100vw
+		height: 100vh
+		background-image: url("../img/without.jpg")
+		background-size: cover
+		background-repeat: no-repeat
+		z-index: -1
+		/* animation */
+		opacity: 0
+		transition: opacity ease-in-out 2s 0s
+		&.vi
+			opacity: 1
+		/* animation */
+			
+	&__container
+		+flexbox(center, space-between)
+		max-width: 1767px
+	&__item
+		width: calc((100% / 3) - 11px)
+		position: relative
+		/* animation */
+		opacity: 0
+		transform: translateY(100px)
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		&.vi
+			opacity: 1
+			transform: translateY(0px)
+		+durationi(200ms, 3, 400ms)
+		/* animation */
+			
+	&__image
+		box-shadow: 0px 66px 411px rgba(0, 0, 0, 0.342767)
+		height: 579px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+			opacity: .6
+		+pseudo
+		&:after
+			top: auto
+			bottom: 0px
+			background-color: $accent
+			width: 100%
+			height: 10px
+	&__name
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 250px
+		font-size: 38px
+		+feb
+		text-align: center
+		color: #fff
+		text-transform: uppercase
+
+
+.team
+	&__elem
+		height: 900px

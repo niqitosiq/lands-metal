@@ -170,5 +170,20 @@ function scrollAnimation(){
 		.addTo(controller);
 
 
+		const withoutTl = new TimelineLite();
+		const allBlockHeight = parseInt($(".without").outerHeight()) + parseInt($(".team").outerHeight());
+		withoutTl.to(".without__background", 1, {
+			y: -($(".without__background").outerHeight()/1.25),
+			ease: Power1.easeOut
+		}, "back")
+		const withoutScene = new ScrollMagic.Scene({
+			triggerElement: ".without",
+			triggerHook: 0,
+			duration: allBlockHeight,
+		})
+		.setTween(withoutTl)
+		.setPin(".without__background")
+		.addTo(controller);
+		
 	}
 }

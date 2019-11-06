@@ -4,6 +4,7 @@ headerHide: false
 footerHide: false
 secNames: ['Главная', "Наши проекты", 'Постоянные клиенты','Наши партнеры','О компании','Кому не повезло', 'Команда', 'Контакты']
 descrs: [['НЭСК электросети', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, magnamLorem ipsum dolor sit amet, consectetur adipisicing elit.'],['НЭСК электросети', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, magnam?']]
+without: ["Колизей", "Бурдж Халифа", "Трамп Тауэр"]
 ---
 extends layouts/_layout
 block content
@@ -125,3 +126,15 @@ block content
 				+e.line._l4._gray
 				+e.line._l5._gray
 				+e.line._l6._gray
+	+b.SECTION.without#without
+		+e.H2.header.anim
+			| Те, кому не повезло поработать с нами
+		+e.background.anim
+		+e.container
+			each val, index in without
+				+e.item.anim
+					+e.image
+						img(src="img/without/" + (index+1) + ".jpg")
+					+e.H3.name= val
+	+b.SECTION.team#team
+		+e.elem
