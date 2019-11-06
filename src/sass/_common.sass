@@ -2,6 +2,7 @@
 +font(Montserrat-Bold, Montserrat-Bold)
 =fb
   font-family: 'Montserrat-Bold', serif
+  font-weight: 500
 
 +font(Montserrat-ExtraBold, Montserrat-ExtraBold)
 =feb
@@ -70,9 +71,9 @@ h2
 	width: 100%
 	max-width: 1903px
 	+flexbox()
+	flex-direction: column
 	/* adaptive */
 	+below(1100px)
-		margin-top: 180px
 		padding-left: 50px
 		padding-right: 50px
 	+below(720px)
@@ -204,6 +205,7 @@ section
 			padding-top: 190px
 		+below(1100px)
 			padding-left: 55px
+			margin-top: 180px
 		+below(720px)
 			padding-top: 200px
 		+below(480px)
@@ -300,6 +302,7 @@ section
 .projects
 	margin-bottom: -120px
 	margin-top: 245px
+	z-index: 2
 	/* adaptive */
 	+below(480px)
 		margin-top: 0px
@@ -395,14 +398,14 @@ section
 		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0599323)
 		right: 0%
 		top: 50%
-		transform: translate(85px, calc(-50% + 50px))
+		transform: translate(200px, calc(-50% + 50px))
+		opacity: 0
 		// adaptive
 		+below(480px)
 			font-size: 300px
 		// adaptive
 .lines
-	z-index: -1
-
+	z-index: 0
 	&__wrapper
 		+flexbox(flex-start, space-between)
 		position: absolute
@@ -448,13 +451,39 @@ section
 		&_whites
 			background-color: #D8D8D8
 			opacity: 0.59
+		&_gray
+			background-color: #F3F3F3
+			opacity: 1
+
+.backword
+	position: absolute
+	+fblack
+	font-size: 300px
+	color: #fff
+	opacity: 0
+	z-index: 1
+	// animation
+	+below(720px)
+		transition: transform 4s ease-in-out, opacity 4s ease-in-out
+		&.vi
+			transform: translateX(0px)
+			opacity: 0.4
+	// animation
+	/* adaptive */
+	+below(1460px)
+		font-size: 250px
+	+below(960px)
+		font-size: 200px
+	+below(720px)
+		font-size: 100px
+	/* adaptive */
 .clients
 	width: 100%
 	background: #E1E7EC
 	position: relative
 	z-index: 5
 	padding-top: 275px
-	padding-bottom: 300px
+	padding-bottom: 220px
 	overflow: hidden
 	/* adaptive */
 	+below(1460px)
@@ -476,30 +505,9 @@ section
 		&.vi
 			opacity: 1
 	&__backword
-		position: absolute
 		top: 35px
 		right: 100px
-		+fblack
-		font-size: 300px
-		color: #fff
-		opacity: 0
 		transform: translateX(230px)
-		z-index: 1
-		// animation
-		+below(720px)
-			transition: transform 4s ease-in-out, opacity 4s ease-in-out
-			&.vi
-				transform: translateX(0px)
-				opacity: 0.4
-		// animation
-		/* adaptive */
-		+below(1460px)
-			font-size: 250px
-		+below(960px)
-			font-size: 200px
-		+below(720px)
-			font-size: 100px
-		/* adaptive */
 	&__slider
 		z-index: 1
 		height: 610px
@@ -700,7 +708,7 @@ section
 	position: relative
 	margin-bottom: 3px
 	padding-top: 103px
-	padding-bottom: 103px
+	padding-bottom: 140px
 	/* adaptive */
 	+below(960px)
 		padding-top: 0
@@ -740,9 +748,9 @@ section
 			height: 100%
 			object-fit: cover
 			opacity: 0
-			transition: opacity ease-in-out 1s
 			/* adaptive */
 			+below(720px)
+				transition: opacity ease-in-out 1s
 				&.vi
 					opacity: 1
 			/* adaptive */
@@ -813,3 +821,104 @@ section
 		&:hover
 			&:after
 				opacity: 1
+.about
+	position: relative
+	overflow: hidden
+	background-color: #fff
+	padding-top: 130px
+	padding-bottom: 350px
+	.container
+		z-index: 2
+	&__container
+		+flexbox(center, flex-start)
+		padding-left: 165px
+		padding-right: 165px
+	&__description
+		+flexbox(center, flex-start, row)
+	&__header
+		text-align: center
+		// animation
+		opacity: 0
+		transform: translateY(-100px)
+		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+
+		&.vi
+			opacity: 1
+			transform: translateY(0)
+		// animation
+	&__backword
+		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0599323)
+		z-index: -1
+		width: 2100px
+		bottom: 0
+		transform: translate(500px, 250px)
+		opacity: .7
+	&__info
+		margin-left: 40px
+		margin-right: 90px
+		margin-top: 120px
+		// animation
+		opacity: 0
+		transform: translateY(-100px)
+		transition: opacity ease-in-out 1s 0.8s, transform ease-in-out 1s 0.8s
+		&.vi
+			opacity: 1
+			transform: translateY(0)
+		// animation
+	&__name
+		font-size: 30px
+		line-height: 33px
+		color: $accent
+		width: 225px
+		+fb
+		font-weight: 500
+	&__position
+		font-size: 14px
+		line-height: 33px
+		color: #323941
+		margin-top: 5px
+	&__hero
+		margin-top: -15px
+		flex-shrink: 0
+		position: relative
+		img
+			// animation
+			transform: translateY(-100px)
+			opacity: 0
+			transition: opacity ease-in-out 1s 0.6s, transform ease-in-out 1s 0.6s
+			&.vi
+				transform: translateY(0)
+				opacity: 1
+			// animation
+	&__text
+		font-size: 14px
+		line-height: 28px
+		color: #323941
+		width: 337px
+		margin-top: 40px
+		// animation
+		transform: translateY(-100px)
+		opacity: 0
+		transition: opacity ease-in-out 1s 1.0s, transform ease-in-out 1s 1.0s
+		&.vi
+			opacity: 1
+			transform: translateY(0)
+		// animation
+		svg
+			font-size: 74px
+			opacity: .1
+			margin-bottom: 18px
+	&__circles
+	&__circle
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 449px
+		height: 449px
+		box-shadow: 0px 97px 131px rgba(43, 51, 78, 0.0870302)
+		border-radius: 100%
+		&_c1
+			transform: scale(0.5) translate(-15px, 10px) // 1.25
+			transform-origin: left center 
+		&_c2
+			transform: scale(0.5) translate(-10px, 10px) // 1.65

@@ -63,7 +63,7 @@ block content
 				+e.item._last
 					span 2019
 					+e.line
-			+e.backword.anim
+			+e.backword.backword.anim
 				span КЛИЕНТЫ
 			+e.__slider.anim
 				+e.arrow._right
@@ -98,3 +98,30 @@ block content
 				each item in [1,2,3]
 					+e.item
 						img(src='img/partners/' + item + '.png')
+	+b.SECTION.about#about
+		.container
+			+e.H2.header.anim
+				| О компании
+			+e.container
+				+e.hero
+					+e.IMG(src="img/leader.png").image.anim
+					+e.circles
+						+e.circle._c1
+						+e.circle._c2
+
+				+e.description
+					+e.info.anim
+						+e.H3.name Иван Александров
+						+e.P.position Генеральный директор
+					+e.text.anim
+						+i("quote")
+						p Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neq
+			+e.backword.backword О компании
+		+b.lines._white
+			+e.wrapper.anim
+				+e.line._l1._gray
+				+e.line._l2._gray
+				+e.line._l3._gray
+				+e.line._l4._gray
+				+e.line._l5._gray
+				+e.line._l6._gray

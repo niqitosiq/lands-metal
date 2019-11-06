@@ -105,6 +105,10 @@ function scrollAnimation(){
 			opacity: 1,
 			y: 0
 		}, "images");
+		projects_TL.to('.projects__cifre', 3, {
+			opacity: 1,
+			x: 85
+		}, "header");
 		projects_TL.add("header");
 		projects_TL.add("images");
 		const showing_trigger = new ScrollMagic.Scene({
@@ -138,11 +142,33 @@ function scrollAnimation(){
 		})
 		const partnerScene = new ScrollMagic.Scene({
 			triggerElement: ".partners",
-			triggerHook: 0.75,
+			triggerHook: 0.5,
 			duration: $(".partners").outerHeight(),
 		})
 		.setTween(partnerTl)
 		.addTo(controller);
+
+
+		const aboutTl = new TimelineLite();
+		aboutTl.to(".about__circle_c1", 1, {
+			scale: 1.25
+		}, "back")
+		aboutTl.to(".about__circle_c2", 1, {
+			scale: 1.65
+		}, "back")
+		aboutTl.to(".about__backword", 1, {
+			x: 750,
+			opacity: 1,
+		}, "back")
+		const aboutScene = new ScrollMagic.Scene({
+			triggerElement: ".about",
+			triggerHook: 0.7,
+			duration: $(".about").outerHeight(),
+		})
+		.setTween(aboutTl)
+		.addTo(controller);
+
+
 
 	}
 }
