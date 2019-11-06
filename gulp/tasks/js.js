@@ -1,6 +1,6 @@
 var gulp         = require('gulp'),
     config       = require('../config'),
-    uglify		 = require("gulp-uglify"),
+    uglify		 = require("gulp-uglify-es").default,
     concat		 = require("gulp-concat"),
     babel		 = require("gulp-babel"),
     webpack      = require('webpack'),
@@ -30,7 +30,7 @@ gulp.task('js', function (done) {
                 ]
             }
         }))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(config.dest.js+'/'));
 })
 	

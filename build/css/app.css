@@ -1,8 +1,8 @@
-.button, .header {
+.button, .header, .partners__item {
   position: relative;
 }
 
-.button:before, .header:before, .button:after, .header:after {
+.button:before, .header:before, .partners__item:before, .button:after, .header:after, .partners__item:after {
   content: ' ';
   position: absolute;
   top: 0;
@@ -834,6 +834,7 @@ body.loaded {
 .out {
   width: 100%;
   overflow-x: hidden;
+  padding-bottom: 1000px;
 }
 
 h1, h2, h3, h4, p {
@@ -1112,6 +1113,8 @@ section {
 .projects {
   margin-bottom: -120px;
   margin-top: 245px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .projects__header {
@@ -1499,6 +1502,108 @@ section {
   max-width: 0;
 }
 
+.partners {
+  position: relative;
+  margin-bottom: 3px;
+  padding-top: 103px;
+  padding-bottom: 103px;
+}
+
+.partners .container {
+  flex-direction: column;
+}
+
+.partners__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.partners__background img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.partners__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* animation */
+  /* animation */
+}
+
+.partners__wrapper > * {
+  opacity: 0;
+  transition: opacity ease-in-out 1s;
+}
+
+.partners__wrapper > *:nth-child(1) {
+  transition-delay: 500ms;
+}
+
+.partners__wrapper > *:nth-child(2) {
+  transition-delay: 1000ms;
+}
+
+.partners__wrapper > *:nth-child(3) {
+  transition-delay: 1500ms;
+}
+
+.partners__wrapper.vi > * {
+  opacity: 1;
+}
+
+.partners__item {
+  width: 380px;
+  height: 267px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.partners__item:last-child {
+  margin-right: 0;
+}
+
+.partners__item img {
+  z-index: 1;
+}
+
+.partners__item:after {
+  width: 100%;
+  height: 100%;
+  background: #2F41FF;
+  transition: opacity ease-in-out 0.4s;
+  opacity: 0;
+}
+
+.partners__item:hover:after {
+  opacity: 1;
+}
+
+.partners__header {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 78px;
+  opacity: 0;
+  transition: opacity ease-in-out 1s;
+}
+
+.partners__header.vi {
+  opacity: 1;
+}
+
 @media only screen and (max-width: 1910px) {
   .main__container {
     padding-left: 300px;
@@ -1661,7 +1766,7 @@ section {
     font-size: 28px;
   }
   .container {
-    margin-top: 130px;
+    margin-top: 0;
     padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
@@ -1692,6 +1797,8 @@ section {
     transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
   }
   .projects__header.vi {
     opacity: 1;
@@ -1704,6 +1811,8 @@ section {
     transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
   }
   .projects__wrapper.vi {
     opacity: 1;
@@ -1732,12 +1841,15 @@ section {
   .clients__slider > .swiper-container {
     width: 100%;
     margin-left: 0;
+    overflow: hidden;
   }
   .clients__wrapper {
     height: 400px;
   }
   .clients__arrow {
     top: 100%;
+    width: 70px;
+    height: 70px;
   }
   .clients__arrow_left {
     -webkit-transform: translate(0, 50%);
@@ -1787,16 +1899,24 @@ section {
   }
   .projects {
     margin-top: 0px;
+    margin-bottom: 30px;
+  }
+  .projects .container {
+    margin-top: 0;
   }
   .projects__wrapper {
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
   }
   .projects__background {
     border-radius: 30px;
   }
   .projects__item {
     height: 150px;
+  }
+  .projects__cifre {
+    font-size: 300px;
   }
   .clients__slider {
     margin-top: 0px;

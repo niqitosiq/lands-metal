@@ -81,8 +81,6 @@ block content
 										+e.description
 											h3= val[0]
 											p= val[1]
-				
-				
 		+b.lines._white
 			+e.wrapper.anim
 				+e.line._l1._whites
@@ -91,3 +89,12 @@ block content
 				+e.line._l4._whites
 				+e.line._l5._whites
 				+e.line._l6._whites
+	+b.SECTION.partners#partners
+		+e.background
+			+e.IMG(src='img/partners-bg.jpg').image
+		.container
+			+e.H2.header.anim Наши партнеры
+			+e.wrapper.anim
+				each item in [1,2,3]
+					+e.item
+						img(src='img/partners/' + item + '.png')

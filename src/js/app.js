@@ -26,15 +26,15 @@ $(window).on("load", function(){
 	$("body, .header, #main .anim").addClass("loaded");
 	inView.offset({top: 0, left: 0, right: 0, bottom: 300});
 
-	inView(".anim")
+	const inview = inView(".anim")
 	.on("enter", el => {
 		$(el).addClass("vi");
-	})
-	/*.on("exit", el => {
-		$(el).removeClass("vi")
-	})*/
-	$(window).on("scroll", function(){
-	})
+	});
+	if ($(window).width()>720){
+		inview.on("exit", el => {
+			$(el).removeClass("vi")
+		})
+	}
 })
 
 
@@ -129,5 +129,20 @@ function scrollAnimation(){
 		})
 		.setTween(clientTl)
 		.addTo(controller);
+
+
+		const partnerTl = new TimelineLite();
+		partnerTl.to(".partners__image", 1, {
+			scale: 1.1,
+			opacity: 1,
+		})
+		const partnerScene = new ScrollMagic.Scene({
+			triggerElement: ".partners",
+			triggerHook: 0.75,
+			duration: $(".partners").outerHeight(),
+		})
+		.setTween(partnerTl)
+		.addTo(controller);
+
 	}
 }
