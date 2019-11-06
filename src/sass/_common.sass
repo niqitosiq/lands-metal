@@ -461,6 +461,8 @@ section
 		padding-top: 230px
 	+below(960px)
 		padding-top: 30px
+	+below(720px)
+		padding-bottom: 150px
 	/* adaptive */
 	.container
 		flex-direction: column
@@ -699,8 +701,33 @@ section
 	margin-bottom: 3px
 	padding-top: 103px
 	padding-bottom: 103px
+	/* adaptive */
+	+below(960px)
+		padding-top: 0
+	+below(720px)
+		padding-bottom: 40px
+	/* adaptive */
 	.container
 		flex-direction: column
+		/* adaptive */
+		+below(960px)
+			margin-top: 100px
+		+below(720px)
+			margin-top: 0
+		/* adaptive */
+
+	&__header
+		color: #fff
+		text-align: center
+		margin-bottom: 78px
+		opacity: 0
+		transition: opacity ease-in-out 1s
+		/* adaptive */
+		+below(720px)
+			margin-bottom: 40px
+		/* adaptive */
+		&.vi
+			opacity: 1
 	&__background
 		position: absolute
 		top: 0
@@ -713,6 +740,12 @@ section
 			height: 100%
 			object-fit: cover
 			opacity: 0
+			transition: opacity ease-in-out 1s
+			/* adaptive */
+			+below(720px)
+				&.vi
+					opacity: 1
+			/* adaptive */
 	&__wrapper
 		+flexbox(center, center)
 		/* animation */
@@ -724,17 +757,53 @@ section
 			>*
 				opacity: 1
 		/* animation */
+		/* adaptive */
+		+below(720px)
+			flex-wrap: wrap
+		/* adaptive */
+
 	&__item
 		width: 380px
 		height: 267px
 		backdrop-filter: blur(50px)
 		+flexbox(center, center)
 		margin-right: 10px
+		/* adaptive */
+		+below(960px)
+			padding-left: 30px
+			padding-right: 30px
+			&:nth-child(2) img
+				max-width: 125px
+		+below(720px)
+			height: auto
+			padding-top: 50px
+			padding-bottom: 50px
+			margin-bottom: 10px
+			margin-right: 0
+		+below(480px)
+			width: 100%
+			padding-left: 50px
+			padding-right: 50px
+			padding-top: 30px
+			padding-bottom: 30px
+			&:nth-child(1) img
+				max-width: 150px
+				height: auto
+		/* adaptive */
 		&:last-child
 			margin-right: 0
 		+pseudo
 		img
 			z-index: 1
+			/* adaptive */
+			+below(960px)
+				width: 100%
+			+below(720px)
+				width: auto
+			+below(480px)
+				height: 50px
+
+			/* adaptive */
 		&:after
 			width: 100%
 			height: 100%
@@ -744,11 +813,3 @@ section
 		&:hover
 			&:after
 				opacity: 1
-	&__header
-		color: #fff
-		text-align: center
-		margin-bottom: 78px
-		opacity: 0
-		transition: opacity ease-in-out 1s
-		&.vi
-			opacity: 1
