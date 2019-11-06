@@ -1145,8 +1145,23 @@ section
 	position: relative
 	margin-top: 105px
 	overflow: hidden
+	/* adaptive */
+	+below(720px)
+		margin-top: 20px
+	/* adaptive */
+		
 	.container
 		position: relative
+		/* adaptive */
+		+below(1300px)
+			padding-left: 100px
+			padding-right: 100px
+		+below(640px)
+			padding-left: 40px
+			padding-right: 40px
+			
+			
+		/* adaptive */
 	&__background
 		position: absolute
 		width: 100%
@@ -1168,12 +1183,15 @@ section
 		position: absolute
 		top: 50%
 		z-index: 6
-		// adaptive
+		/* adaptive */
+		+below(1200px)
+			top: calc(100% - 50px)
+			opacity: 1
+			transition
 		+below(720px)
-			top: 100%
 			width: 70px
 			height: 70px
-		// adaptive
+		/* adaptive */
 		/* animation */
 		opacity: 0
 		transform: translateY(100px)
@@ -1186,32 +1204,50 @@ section
 		&_left
 			left: 75px
 			transform: translate(-0px, -50%)
-			// adaptive
-			+below(1230px)
-				transform: translate(0, -50%)
-			+below(720px)
-				transform: translate(0, 50%)
-			// adaptive
+			/* adaptive */
+			+below(1200px)
+				transform: translate(0, -100%)
+			+below(640px)
+				left: 40px
+			/* adaptive */
 
 		&_right
 			right: 75px
 			transform: translate(0px, -50%) rotate(180deg)
-			// adaptive
+			/* adaptive */
 			+below(1230px)
-				transform: translate(0, -50%) rotate(180deg)
-			+below(720px)
-				transform: translate(0, 50%) rotate(180deg)
-			// adaptive
+				transform: translate(0, -100%) rotate(180deg)
+			+below(640px)
+				right: 40px
+				
+			/* adaptive */
 			&.vi
 				transform: translateY(-50%) rotate(180deg)
 
 		svg 
 			font-size: 20px
+	.swiper-wrapper
+		/* adaptive */
+		+below(960px)
+			align-items: flex-end
+			justify-content: flex-start
+		/* adaptive */
+			
 	&__slide
 		+flexbox(center, center)
 		color: #FFF
-	.swiper-container
-		overflow: hidden
+		/* adaptive */
+		+below(960px)
+			flex-direction: column
+			justify-content: flex-start
+			align-items: flex-start
+			padding-top: 40px
+		+below(720px)
+			align-items: flex-end
+			padding-top: 0
+
+		/* adaptive */
+			
 	&__description
 		width: 278px
 		font-size: 16px
@@ -1227,7 +1263,24 @@ section
 			opacity: 1
 			transform: translateY(0px)
 		/* animation */
+
+		/* adaptive */
+		+below(1500px)
+			margin-left: 25px
+		+below(960px)
+			order: 2
+			align-self: flex-end
+			text-align: right
+		+below(720px)
+			align-self: flex-start
+			text-align: left
+			margin-left: 0
+			margin-top: 20px
+
 			
+			
+			
+		/* adaptive */
 	&__info
 		margin-right: 50px
 		position: relative
@@ -1240,18 +1293,54 @@ section
 			opacity: 1
 			transform: translateY(0px)
 		/* animation */
+		/* adaptive */
+		+below(1500px)
+			margin-right: 25px
+		+below(960px)
+			order: 1
+			align-self: flex-end
+			text-align: right
+			margin-right: 0
+		+below(720px)
+			align-self: flex-start
+			text-align: left
+		/* adaptive */
 			
 		h3
 			+fb
 			font-size: 40px
 			line-height: 37px
 			width: 320px
+			/* adaptive */
+			+below(1500px)
+				font-size: 34px
+				width: auto
+			+below(1200px)
+				font-size: 28px
+				line-height: 28px
+				
+			/* adaptive */
 		p
 			margin-top: 15px
 			font-size: 14px
 			line-height: 33px
 	&__image
 		margin-top: 100px
+		+below(960px)
+			order: 3
+			width: 300px
+			margin-top: -200px
+		+below(630px)
+			width: 70%
+			margin-top: -300px
+			margin-right: -50px
+		+below(480px)
+			margin-top: -200px
+		+below(400px)
+			margin-top: 0
+			margin-right: 0
+			align-self: center
+			width: 100%
 		img
 			width: 100%
 			height: 100%
@@ -1265,6 +1354,14 @@ section
 				opacity: 1
 				transform: translateY(0)
 			/* animation */
+			/* adaptive */
+			+below(960px)
+				width: 130%
+			+below(400px)
+				width: 100%
+				
+			/* adaptive */
+				
 		+pseudo
 		&:before
 			background-color: #000
