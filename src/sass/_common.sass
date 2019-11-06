@@ -77,7 +77,6 @@ h2
 		padding-left: 50px
 		padding-right: 50px
 	+below(720px)
-		margin-top: 0
 		padding-top: 50px
 		padding-left: 20px
 		padding-right: 20px
@@ -205,7 +204,7 @@ section
 			padding-top: 190px
 		+below(1100px)
 			padding-left: 55px
-			margin-top: 180px
+			margin-top: 0
 		+below(720px)
 			padding-top: 200px
 		+below(480px)
@@ -827,44 +826,100 @@ section
 	background-color: #fff
 	padding-top: 130px
 	padding-bottom: 350px
+	/* adaptive */
+	+below(720px)
+		padding-top: 0px
+		padding-bottom: 40px
+	/* adaptive */
+		
 	.container
 		z-index: 2
 	&__container
 		+flexbox(center, flex-start)
 		padding-left: 165px
 		padding-right: 165px
+		/* adaptive */
+		+below(1800px)
+			padding-left: 0
+			padding-right: 0
+			justify-content: space-between
+		+below(1400px)
+			justify-content: center
+			
+		+below(720px)
+			flex-direction: column
+			
+			
+		/* adaptive */
 	&__description
 		+flexbox(center, flex-start, row)
+		/* adaptive */
+		+below(1900px)
+			width: 100%
+			padding-left: 60px
+		+below(1500px)
+			flex-direction: column
+			align-items: flex-start
+			padding-left: 150px
+		+below(1400px)
+			padding-left: 100px
+		+below(1000px)
+			padding-left: 40px
+			
+			
+		
+		/* adaptive */
 	&__header
 		text-align: center
 		// animation
 		opacity: 0
 		transform: translateY(-100px)
 		transition: opacity ease-in-out 1s 0s, transform ease-in-out 1s 0s
+		z-index: 3
+		&.vi
+			opacity: 1
+			transform: translateY(0)
+		// animation
+		/* adaptive */
+		+below(1500px)
+			margin-bottom: 60px
+			
+		/* adaptive */
+	&__backword
+		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0599323)
+		z-index: -1
+		width: 2100px
+		bottom: -250px
+		right: -1100px
+		transform: translateX(-400px)
+		opacity: 1
+		/* adaptive */
+		+below(1500px)
+			right: -1400px
+		/* adaptive */
+	&__info
+		margin-left: 40px
+		margin-right: 90px
+		margin-top: 120px
+		z-index: 4
+		// animation
+		opacity: 0
+		transform: translateY(-100px)
+		transition: opacity ease-in-out 1s 0.8s, transform ease-in-out 1s 0.8s
 
 		&.vi
 			opacity: 1
 			transform: translateY(0)
 		// animation
-	&__backword
-		text-shadow: 0px 37px 65px rgba(0, 0, 0, 0.0599323)
-		z-index: -1
-		width: 2100px
-		bottom: 0
-		transform: translate(500px, 250px)
-		opacity: .7
-	&__info
-		margin-left: 40px
-		margin-right: 90px
-		margin-top: 120px
-		// animation
-		opacity: 0
-		transform: translateY(-100px)
-		transition: opacity ease-in-out 1s 0.8s, transform ease-in-out 1s 0.8s
-		&.vi
-			opacity: 1
-			transform: translateY(0)
-		// animation
+		/* adaptive */
+		+below(1500px)
+			margin-right: 20px
+			margin-left: 0
+			order: 1
+			margin-top: 40px
+		+below(720px)
+			transition-delay: 0s
+		/* adaptive */
 	&__name
 		font-size: 30px
 		line-height: 33px
@@ -872,6 +927,11 @@ section
 		width: 225px
 		+fb
 		font-weight: 500
+		/* adaptive */
+		+below(720px)
+			font-size: 22px
+		/* adaptive */
+			
 	&__position
 		font-size: 14px
 		line-height: 33px
@@ -883,6 +943,8 @@ section
 		position: relative
 		img
 			// animation
+			z-index: 3
+			position: relative
 			transform: translateY(-100px)
 			opacity: 0
 			transition: opacity ease-in-out 1s 0.6s, transform ease-in-out 1s 0.6s
@@ -890,12 +952,21 @@ section
 				transform: translateY(0)
 				opacity: 1
 			// animation
+
+			/* adaptive */
+			+below(1400px)
+				width: 350px
+			+below(430px)
+				width: 100%
+				
+			/* adaptive */
 	&__text
 		font-size: 14px
 		line-height: 28px
 		color: #323941
 		width: 337px
 		margin-top: 40px
+		z-index: 3
 		// animation
 		transform: translateY(-100px)
 		opacity: 0
@@ -904,6 +975,17 @@ section
 			opacity: 1
 			transform: translateY(0)
 		// animation
+		/* adaptive */
+		+below(1900px)
+			transition-delay: 0
+		+below(1400px)
+			width: auto
+		+below(720px)
+			transition-delay: 0
+			margin-top: 0
+		+below(480px)
+			padding-right: 50px
+		/* adaptive */
 		svg
 			font-size: 74px
 			opacity: .1
@@ -917,8 +999,34 @@ section
 		height: 449px
 		box-shadow: 0px 97px 131px rgba(43, 51, 78, 0.0870302)
 		border-radius: 100%
+		background-color: #fff
+		/* adaptive */
+		+below(1400px)
+			width: 350px
+			height: 350px
+		+below(720px)
+			transition: transform ease-in-out 1s, opacity ease-in-out 1s
+			opacity: 0
+		/* adaptive */
 		&_c1
 			transform: scale(0.5) translate(-15px, 10px) // 1.25
 			transform-origin: left center 
+			z-index: 2
+			/* adaptive */
+			+below(720px)
+				transition-delay: 0.4s
+				&.vi
+					transform: scale(1.25)
+					opacity: 1
+			/* adaptive */
 		&_c2
 			transform: scale(0.5) translate(-10px, 10px) // 1.65
+			z-index: 1
+			/* adaptive */
+			+below(720px)
+				transition-delay: 0.5s
+				&.vi
+					transform: scale(1.65)
+					opacity: 1
+			/* adaptive */
+				

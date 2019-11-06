@@ -149,6 +149,7 @@ function scrollAnimation(){
 		.addTo(controller);
 
 
+
 		const aboutTl = new TimelineLite();
 		aboutTl.to(".about__circle_c1", 1, {
 			scale: 1.25
@@ -157,7 +158,7 @@ function scrollAnimation(){
 			scale: 1.65
 		}, "back")
 		aboutTl.to(".about__backword", 1, {
-			x: 750,
+			x: 0,
 			opacity: 1,
 		}, "back")
 		const aboutScene = new ScrollMagic.Scene({
@@ -167,7 +168,6 @@ function scrollAnimation(){
 		})
 		.setTween(aboutTl)
 		.addTo(controller);
-
 
 
 	}
