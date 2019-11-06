@@ -46,13 +46,14 @@ $(document).ready(function(){
 })
 $(window).on("load", function(){
 	$("body, .header, #main .anim").addClass("loaded");
-	inView.offset({top: 0, left: 0, right: 0, bottom: 300});
+	
 
 	const inview = inView(".anim")
 	.on("enter", el => {
 		$(el).addClass("vi");
 	});
 	if ($(window).width()>720){
+		inView.offset({top: 0, left: 0, right: 0, bottom: 200});
 		inview.on("exit", el => {
 			$(el).removeClass("vi")
 		})
