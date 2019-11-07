@@ -185,6 +185,7 @@ h2
 section
 	+flexbox(center, flex-start, column)
 .main
+	background-color: #0e1317
 	z-index: 6
 	&__container
 		+flexbox(flex-start, flex-start, column)
@@ -255,7 +256,7 @@ section
 		left: 0
 		top: 0
 		z-index: -1
-		transform: translateY(-400px)
+		transform: translateY(-300px)
 		background-image: url("../img/hero-bg.jpg")
 		background-size: cover
 		/* animation */
@@ -361,6 +362,9 @@ section
 
 	&__background
 		backdrop-filter: blur(50px)
+		@-moz-document url-prefix()
+			background-color: #373737
+			backdrop-filter: none
 		+flexbox(center, center, column)
 		position: relative
 		+below(480px)
@@ -777,6 +781,9 @@ section
 		width: 380px
 		height: 267px
 		backdrop-filter: blur(50px)
+		@-moz-document url-prefix()
+			background-color: #373737
+			backdrop-filter: none
 		+flexbox(center, center)
 		margin-right: 10px
 		/* adaptive */
@@ -1225,9 +1232,9 @@ section
 		svg 
 			font-size: 20px
 	.swiper-wrapper
+		align-items: flex-end
 		/* adaptive */
 		+below(960px)
-			align-items: flex-end
 			justify-content: flex-start
 		/* adaptive */
 			
@@ -1325,6 +1332,7 @@ section
 			line-height: 33px
 	&__image
 		margin-top: 100px
+		margin-bottom: -4px
 		+below(960px)
 			order: 3
 			width: 300px
@@ -1456,7 +1464,7 @@ section
 		+below(1615px)
 			left: 150px
 			right: auto
-		+below(1415px)
+		+below(1315px)
 			width: 100%
 		+below(720px)
 			position: static

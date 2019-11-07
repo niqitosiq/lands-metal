@@ -64,10 +64,7 @@ $(window).on("load", function(){
 
 function scrollAnimation(){
 	// main animation
-
-
 	const controller = new ScrollMagic.Controller();
-
 	const headerfix = new ScrollMagic.Scene({
 		triggerElement: ".main__header",
 		triggerHook: 0,
@@ -75,8 +72,6 @@ function scrollAnimation(){
 	})
 		.setClassToggle(".header", "scrolled")
 		.addTo(controller);
-
-
 	if ($(window).width()>720){
 		const tween = new TimelineLite();
 		tween.add(
@@ -105,16 +100,11 @@ function scrollAnimation(){
 		const background = new TimelineLite();
 		background.to('.main__background', 1, {
 				y: 0,
-				ease: Power2.easeOut,
-			}, "paral").to('#main-line-wrapper', 1, {
-				opacity: 0,
+				ease: Power0.easeNone,
 			}, "paral")
-		background.add(
-			"paral"
-		)
 		const main_scene = new ScrollMagic.Scene({
 			triggerElement: "#main",
-			duration: main_height,
+			duration: main_height/2,
 			triggerHook: 0,
 		})
 		.setTween(background)
