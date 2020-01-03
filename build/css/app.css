@@ -1161,9 +1161,10 @@ section {
   position: relative;
 }
 
-@-moz-document url-prefix() {
+@supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
   .projects__background {
     background-color: #373737;
+    -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
 }
@@ -1622,9 +1623,10 @@ section {
   /* adaptive */
 }
 
-@-moz-document url-prefix() {
+@supports not ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
   .partners__item {
     background-color: #373737;
+    -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
 }

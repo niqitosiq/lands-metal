@@ -362,7 +362,7 @@ section
 
 	&__background
 		backdrop-filter: blur(50px)
-		@-moz-document url-prefix()
+		@supports not (backdrop-filter: blur(50px))
 			background-color: #373737
 			backdrop-filter: none
 		+flexbox(center, center, column)
@@ -781,7 +781,7 @@ section
 		width: 380px
 		height: 267px
 		backdrop-filter: blur(50px)
-		@-moz-document url-prefix()
+		@supports not (backdrop-filter: blur(50px))
 			background-color: #373737
 			backdrop-filter: none
 		+flexbox(center, center)
