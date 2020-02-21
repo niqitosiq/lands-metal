@@ -4,15 +4,15 @@ headerHide: false
 footerHide: false
 secNames: ['Главная', "Наши проекты", 'Постоянные клиенты','Наши партнеры','О компании','Кому не повезло', 'Команда', 'Контакты']
 descrs: [
-['НЭСК электросети', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, magnamLorem ipsum dolor sit amet, consectetur adipisicing elit.'],
+['НЭСК электросети', 'ООО «Новомосковская энергосбытовая компания» осуществляет снабжение потребителей электрической энергии, а так же занимается строительством.'],
 ['ОСТ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, magnam?'],
 ["Строймонтаж сервис", 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, magnam?']
 ]
 without: ["Колизей", "Бурдж Халифа", "Трамп Тауэр"]
 team: [
-["Елена Александрова", "Генеральный директор", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae "],
-["Светлана Иванова", "Генеральный директор", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae "],
-["Виктория Николаева", "Генеральный директор", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae "]]
+["Елена Александрова", "Менеджер по продажам", "Сбор и анализ информации, презентации проектов, разработка документации, заключение договоров, работа на выставках, отслеживание, чтобы товар был доставлен вовремя"],
+["Мария Сизенкова", "Менеджер по продажам", "Руководит отделом по продажам. Осуществляет связь между покупателями и Организацией.  Также ведет переговоры по организации встреч с потенциальным клиентом, создаёт благоприятный эмоциональный фон делового общения, выслушивает клиента, получает информацию о его потребностях"],
+["Виктория Николаева", "Менеджер по продажам", "Создание и регулярное обновление базы данных покупателей, чтобы своевременно отслеживать новых потенциальных клиентов, выясняет их предпочтение к тому или иному товару. Поддержание и развитие долговременных отношений с покупателями, сохранение их интереса к предложениям фирмы и естественно сохранение налаженных продаж"]]
 ---
 extends layouts/_layout
 block content
@@ -37,9 +37,9 @@ block content
 				+e.background
 					+e.H2.header.anim
 						| Наши проекты
-					+e.wrapper.anim
+					+e.wrapper
 						each val in [1,2,3,4,5,6]
-							+e.item(class=val%3 === 0 ? "no_margin" : "")
+							+e.item(class=val%3 === 0 ? "no_margin" : "").anim
 								img.image(src="img/projects/" + val + ".jpg")
 					+e.cifre
 						span 6
@@ -120,11 +120,11 @@ block content
 
 				+e.description
 					+e.info.anim
-						+e.H3.name Иван Александров
-						+e.P.position Генеральный директор
+						+e.H3.name Бурмистров Алексей Евгеньевич
+						+e.P.position Руководитель
 					+e.text.anim
 						+i("quote")
-						p Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neq
+						p ООО “НЗМИ” занимается производством металлоконструкций, а также изделий из проволоки. Наличие собственного производства позволяет компании контролировать качество продукции, а также осуществлять контроль над своевременной поставкой. Многолетний опыт работы, отслеживание передовых направлений, изучение постоянных потребностей и предпочтений покупателей - позволяет ООО “НЗМИ” идти в ногу со временем и занимать лидирующие позиции в данной сфере.
 			+e.backword.backword О компании
 		+b.lines._white
 			+e.wrapper.anim
@@ -177,7 +177,8 @@ block content
 				| ты
 			+e.wrapper
 				+e.info.anim
-					+e.A(href="#").addr Москва. Пархоменко 2 б
-					+e.A(href="#").phone +7 495 999-00-99
-					+e.A(href="#").email info@site.ru
+					+e.A(href="#").addr Тульская область, г.Новомосковск, ул.Пионерская, 12У, стр.1
+					+e.A(href="#").addr Тульская область, пос.Ширинский, ул.Строительная, 1А
+					+e.A(href="tel:+7 905 189-85-58").phone +7 905 189-85-58
+					+e.A(href="mailto:setka@souzgk.ru").email setka@souzgk.ru
 				+e.IMG(src="img/map.jpg").map.anim

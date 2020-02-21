@@ -279,7 +279,7 @@
   @if $horizontal != null
     justify-content: $horizontal
 
-=durationi($dur, $sum, $def: 0)
-  @for $i from 1 through $sum
+=durationi($dur, $sum, $def: 0, $start: 1)
+  @for $i from $start through $sum
     &:nth-child(#{$i})
       transition-delay: $def + ($dur * $i)

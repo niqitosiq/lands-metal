@@ -132,6 +132,8 @@ h2
 	transition: transform ease-in-out 1s 2.5s, padding-top ease-in-out .2s, padding-bottom ease-in-out .2s
 	&.loaded
 		transform: translateY(0)
+		.header__top-icon
+			opacity: 1
 	/* animation */
 	/* adaptive */
 	+below(1100px)
@@ -146,12 +148,46 @@ h2
 		+below(720px)
 			height: 54px
 		/* adaptive */
-	&__logo svg
-		width: 117px
-		/* adaptive */
-		+below(480px)
-			width: 80px
-		/* adaptive */
+	&__logo 
+		position: relative
+		height: 100%
+	&__top-icon
+		transition: opacity ease-in-out 1s 2.5s
+		opacity: 0
+		svg
+			font-size: 90px
+			position: absolute
+			/* adaptive */
+			+below(480px)
+				width: 80px
+			/* adaptive */
+	&__text-logo
+		position: absolute
+		left: 0
+		top: 50%
+		margin-top: 0px
+		width: 400px
+		+flexbox(center, flex-start)
+		h2
+			letter-spacing: 3px
+			+fb
+			font-size: 26px
+			margin-left: 20px
+		p
+			font-size: 14px
+			text-transform: none
+			flex-shrink: 0
+			margin-left: 20px
+		svg
+			opacity: 1
+			font-size: 50px
+			flex-shrink: 0
+		/* animation */
+		opacity: 0
+		transform: translateX(-30px)
+		transition: opacity ease-in-out 0.3s 0s, transform ease-in-out 0.3s 0s
+		/* animation */
+			
 	&__phone
 		+fm
 		font-size: 22px
@@ -162,6 +198,7 @@ h2
 
 	&__lead
 		margin-left: 60px
+		box-shadow: none
 		/* adaptive */
 		+below(720px)
 			display: none
@@ -179,7 +216,11 @@ h2
 			color: #000
 			padding-bottom: 10px
 			padding-top: 10px
-
+		.header__text-logo
+			opacity: 1
+			transform: translateX(0px)
+		.header__top-icon svg
+			opacity: 0
 		&:after
 			opacity: 1
 section
@@ -192,6 +233,7 @@ section
 		align-self: flex-start
 		padding-top: 281px
 		padding-left: 375px
+		z-index: 2
 		/* animation */
 		>*
 			opacity: 0
@@ -274,7 +316,7 @@ section
 	position: fixed
 	top: 292px
 	left: 54px
-	
+	z-index: 5
 	/* adaptive */
 	+below(1450px)
 		top: 200px
@@ -317,7 +359,15 @@ section
 	&__header
 		margin-top: 100px
 		margin-bottom: 90px
+		/* animation */
 		opacity: 0
+		transition: opacity ease-in-out 0.4s, transform ease-in-out 0.4s
+		transform: translateY(0px)
+		&.vi
+			opacity: 1
+			transform: translateY(0px)
+		/* animation */
+			
 		transform: translateY(100px)
 		color: #fff
 		/* adaptive */
@@ -327,11 +377,6 @@ section
 		+below(720px)
 			margin-top: 40px
 			margin-bottom: 30px
-			transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out
-			transform: translateY(0px)
-			&.vi
-				opacity: 1
-				transform: translateY(0px)
 		/* adaptive */
 	&__wrapper
 		padding-left: 148px
@@ -340,8 +385,6 @@ section
 		z-index: 2
 		+flexbox(center, center)
 		flex-wrap: wrap
-		opacity: 0
-		transform: translateY(100px)
 		/* adaptive */
 		+below(1650px)
 			padding-left: 110px
@@ -349,11 +392,6 @@ section
 		+below(720px)
 			padding-left: 50px
 			padding-right: 50px
-			transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out
-			transform: translateY(0px)
-			&.vi
-				opacity: 1
-				transform: translateY(0px)
 		+below(480px)
 			padding-left: 20px
 			padding-right: 20px
@@ -374,6 +412,22 @@ section
 		height: 380px
 		margin-bottom: 10px
 		margin-right: 12px
+		/* animation */
+		transform: translateY(50px)
+		opacity: 0		
+		transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out
+		+durationi(100ms, 3, 0, 1)
+		&:nth-child(4)
+			transition-delay: 0ms
+		&:nth-child(5)
+			transition-delay: 100ms
+		&:nth-child(6)
+			transition-delay: 200ms
+
+		&.vi
+			opacity: 1
+			transform: translateY(0px)
+		/* animation */
 		/* adaptive */
 		+below(1650px)
 			height: 300px
@@ -389,7 +443,7 @@ section
 		+below(480px)
 			height: 150px
 		/* adaptive */
-
+			
 		img
 			width: 100%
 			height: 100%
@@ -1517,7 +1571,7 @@ section
 			margin-top: 30px
 		/* adaptive */
 	&__addr, &__addr:visited
-		font-size: 30px
+		font-size: 20px
 		line-height: 33px
 		color: $accent
 		+fb

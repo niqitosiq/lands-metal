@@ -108,8 +108,10 @@ function scrollAnimation(){
 			triggerHook: 0,
 		})
 		.setTween(background)
-		.addTo(controller)
+		.addTo(controller);
+
 		const projects_TL = new TimelineLite();
+		/*
 		projects_TL.to('.projects__header', 1, {
 			opacity: 1,
 			y: 0
@@ -117,21 +119,20 @@ function scrollAnimation(){
 		projects_TL.to('.projects__wrapper', 1, {
 			opacity: 1,
 			y: 0
-		}, "images");
+		}, "images");*/
 		projects_TL.to('.projects__cifre', 3, {
 			opacity: 1,
 			x: 85
 		}, "header");
 		projects_TL.add("header");
-		projects_TL.add("images");
+		//projects_TL.add("images");
 		const showing_trigger = new ScrollMagic.Scene({
 			triggerElement: ".projects",
-			triggerHook: 0.5,
+			triggerHook: 0.2,
 			duration: 300
 		})
 		.setTween(projects_TL)
-		.addTo(controller)
-
+		.addTo(controller);
 
 
 		const clientTl = new TimelineLite();
