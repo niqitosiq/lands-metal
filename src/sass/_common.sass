@@ -173,6 +173,10 @@ h2
 			+fb
 			font-size: 26px
 			margin-left: 20px
+			/* adaptive */
+			+below(480px)
+				display: none
+			/* adaptive */
 		p
 			font-size: 14px
 			text-transform: none
@@ -1578,7 +1582,8 @@ section
 		margin-bottom: 30px
 		/* adaptive */
 		+below(1125px)
-			font-size: 22px
+			font-size: 18px
+			line-height: 25px
 		+below(480px)
 			font-size: 18px
 			margin-bottom: 10px

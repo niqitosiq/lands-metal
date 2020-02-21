@@ -1009,6 +1009,8 @@ h2 {
   font-weight: 100;
   font-size: 26px;
   margin-left: 20px;
+  /* adaptive */
+  /* adaptive */
 }
 
 .header__text-logo p {
@@ -2708,7 +2710,8 @@ section {
     padding-right: 90px;
   }
   .contacts__addr, .contacts__addr:visited {
-    font-size: 22px;
+    font-size: 18px;
+    line-height: 25px;
   }
   .contacts__phone {
     font-size: 20px;
@@ -3084,6 +3087,9 @@ section {
   }
   .header__top-icon svg {
     width: 80px;
+  }
+  .header__text-logo h2 {
+    display: none;
   }
   .header__phone {
     font-size: 18px;
