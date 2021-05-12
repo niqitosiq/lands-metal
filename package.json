@@ -62,7 +62,7 @@
     "map-stream": "0.0.7",
     "require-dir": "^1.2.0",
     "scrollmagic": "^2.0.7",
-    "swiper": "^5.2.0",
+    "swiper": "^6.5.1",
     "through2": "^3.0.1",
     "webpack": "^4.41.2",
     "webpack-stream": "^5.2.1"
